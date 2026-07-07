@@ -20,6 +20,12 @@
   to = "/metodo/metodo-accion.html"
   status = 301
 
+# Link corto del test
+[[redirects]]
+  from = "/test"
+  to = "/test.html"
+  status = 301
+
 # Link corto para compartir la guía
 [[redirects]]
   from = "/guia"

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Test de Diagnóstico Rentable™ · Lorena Laverde</title>
+<meta name="description" content="Diagnostica gratis en 3 minutos cuánto dinero está dejando ir tu negocio. 10 preguntas, resultado inmediato y tu fuga principal identificada.">
+<link rel="canonical" href="https://lorenalaverde.com/test.html">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Test de Diagnóstico Rentable™ — ¿Cuánto dinero está dejando ir tu negocio?">
+<meta property="og:description" content="10 preguntas · 3 minutos · Resultado inmediato con tu fuga principal de dinero.">
+<meta property="og:image" content="https://lorenalaverde.com/images/foto-lorena-escenario.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700&family=Montserrat:wght@300;400;600&family=Space+Mono&display=swap" rel="stylesheet">
+<style>
+  :root{--espresso:#3D2314;--terracota:#C4652A;--oro:#D4A853;--salvia:#7A9E7E;--crema:#F5EFE0;--arena:#C9B99A;--carbon:#2C2C2C;--blanco:#FDFBF6;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Montserrat',sans-serif;font-weight:300;background:var(--crema);color:var(--carbon);line-height:1.65;min-height:100vh;}
+  .mono{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--terracota);}
+  h1,h2{font-family:'Playfair Display',serif;font-style:italic;font-weight:700;color:var(--espresso);line-height:1.25;}
+  nav{background:rgba(245,239,224,0.97);border-bottom:1px solid var(--arena);padding:14px 24px;display:flex;justify-content:space-between;align-items:center;}
+  nav .logo{font-family:'Playfair Display',serif;font-style:italic;font-weight:700;font-size:18px;color:var(--espresso);text-decoration:none;}
+  nav a.back{font-size:12px;color:var(--carbon);text-decoration:none;}
+  .wrap{max-width:660px;margin:0 auto;padding:36px 20px 80px;}
+  .card{background:var(--blanco);border-radius:16px;padding:34px 28px;box-shadow:0 4px 20px rgba(61,35,20,0.10);}
+  .btn{display:inline-block;background:var(--terracota);color:white;padding:14px 30px;border-radius:8px;text-decoration:none;font-weight:600;font-size:15px;border:none;cursor:pointer;font-family:'Montserrat',sans-serif;transition:background .2s;}
+  .btn:hover{background:var(--espresso);}
+  .btn.full{width:100%;text-align:center;}
+  .hidden{display:none;}
+
+  /* INTRO */
+  #intro h1{font-size:clamp(26px,5vw,34px);margin:14px 0 16px;}
+  #intro p{margin-bottom:14px;font-size:15px;color:#4a4a4a;}
+  .intro-datos{display:flex;gap:18px;margin:22px 0 26px;flex-wrap:wrap;}
+  .dato{background:var(--crema);border-radius:10px;padding:10px 16px;font-size:12px;font-weight:600;color:var(--espresso);}
+
+  /* QUIZ */
+  .progress{height:8px;background:#E8DDD0;border-radius:4px;margin-bottom:8px;overflow:hidden;}
+  .progress div{height:100%;background:var(--terracota);width:0%;transition:width .3s;border-radius:4px;}
+  .q-count{font-size:11px;color:#999;margin-bottom:18px;}
+  .q-area{margin-bottom:6px;}
+  .q-text{font-family:'Playfair Display',serif;font-style:italic;font-weight:700;font-size:21px;color:var(--espresso);margin-bottom:22px;line-height:1.35;}
+  .opt{display:block;width:100%;text-align:left;background:var(--crema);border:2px solid transparent;border-radius:10px;padding:15px 18px;margin-bottom:11px;font-size:14.5px;font-family:'Montserrat',sans-serif;cursor:pointer;transition:all .15s;color:var(--carbon);}
+  .opt:hover{border-color:var(--terracota);background:#FBF6EC;}
+
+  /* FORM */
+  #gate h2{font-size:24px;margin-bottom:10px;}
+  #gate p{font-size:14px;color:#555;margin-bottom:22px;}
+  #gate input{width:100%;padding:14px 16px;margin-bottom:12px;border:1.5px solid var(--arena);border-radius:8px;font-family:'Montserrat',sans-serif;font-size:15px;background:var(--crema);}
+  #gate input:focus{outline:none;border-color:var(--terracota);}
+  .privacidad{font-size:11px;color:#999;margin-top:12px;text-align:center;}
+
+  /* RESULTADO */
+  .score-ring{text-align:center;margin:6px 0 18px;}
+  .score-num{font-family:'Playfair Display',serif;font-style:italic;font-weight:700;font-size:64px;color:var(--terracota);line-height:1;}
+  .score-lbl{font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:#999;}
+  #res-titulo{font-size:26px;text-align:center;margin-bottom:14px;}
+  #res-texto{font-size:14.5px;color:#4a4a4a;margin-bottom:20px;}
+  .fuga{background:var(--espresso);color:var(--crema);border-radius:12px;padding:18px 20px;margin-bottom:22px;}
+  .fuga .lbl{color:var(--oro);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:6px;}
+  .fuga p{font-size:14px;}
+  .areas{margin-bottom:26px;}
+  .area-row{display:flex;align-items:center;gap:12px;margin-bottom:10px;font-size:12.5px;}
+  .area-nombre{width:130px;flex-shrink:0;font-weight:600;color:var(--espresso);}
+  .area-bar{flex:1;height:9px;background:#E8DDD0;border-radius:5px;overflow:hidden;}
+  .area-bar div{height:100%;border-radius:5px;}
+  .cta-box{background:var(--crema);border:2px solid var(--oro);border-radius:14px;padding:24px;text-align:center;}
+  .cta-box h2{font-size:20px;margin-bottom:8px;}
+  .cta-box p{font-size:13.5px;color:#555;margin-bottom:18px;}
+  .cta-box .wa{display:block;margin-top:12px;font-size:13px;color:var(--espresso);}
+  .disclaimer{font-size:10.5px;color:#aaa;text-align:center;margin-top:22px;line-height:1.6;}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="index.html">Lorena Laverde</a>
+  <a class="back" href="index.html">← Volver al sitio</a>
+</nav>
+
+<div class="wrap">
+
+  <!-- INTRO -->
+  <div class="card" id="intro">
+    <div class="mono">Test de Diagnóstico Rentable™ · Gratuito</div>
+    <h1>¿Cuánto dinero está dejando ir tu negocio?</h1>
+    <p>10 preguntas sobre las 5 áreas donde los negocios pierden dinero sin darse cuenta: dependencia del dueño, precios, ventas, procesos y estrategia.</p>
+    <p><strong>Responde lo que ES, no lo que quisieras que fuera.</strong> Nadie más ve tus respuestas individuales — y un diagnóstico solo sirve si es honesto.</p>
+    <div class="intro-datos">
+      <div class="dato">⏱ 3 minutos</div>
+      <div class="dato">📊 Resultado inmediato</div>
+      <div class="dato">🎯 Tu fuga principal identificada</div>
+    </div>
+    <button class="btn full" onclick="empezar()">Empezar mi diagnóstico →</button>
+  </div>
+
+  <!-- QUIZ -->
+  <div class="card hidden" id="quiz">
+    <div class="progress"><div id="bar"></div></div>
+    <div class="q-count" id="qcount"></div>
+    <div class="mono q-area" id="qarea"></div>
+    <div class="q-text" id="qtext"></div>
+    <div id="qopts"></div>
+  </div>
+
+  <!-- GATE -->
+  <div class="card hidden" id="gate">
+    <div class="mono">Tu diagnóstico está listo</div>
+    <h2>¿A nombre de quién preparo tu resultado?</h2>
+    <p>Verás tu puntaje, tu fuga principal de dinero y el primer paso recomendado — todo en la siguiente pantalla.</p>
+    <input type="text" id="f-nombre" placeholder="Tu nombre" required>
+    <input type="email" id="f-email" placeholder="Tu correo" required>
+    <input type="tel" id="f-whatsapp" placeholder="Tu WhatsApp (opcional)">
+    <button class="btn full" onclick="verResultado()">Ver mi resultado →</button>
+    <p class="privacidad">Tu información solo se usa para entregarte tu diagnóstico. Sin spam.</p>
+  </div>
+
+  <!-- RESULTADO -->
+  <div class="card hidden" id="resultado">
+    <div class="mono" style="text-align:center;">Diagnóstico Rentable™ · Resultado</div>
+    <div class="score-ring">
+      <div class="score-num" id="res-score"></div>
+      <div class="score-lbl">de 20 puntos</div>
+    </div>
+    <h2 id="res-titulo"></h2>
+    <p id="res-texto"></p>
+    <div class="fuga">
+      <div class="lbl">🔍 Tu fuga principal</div>
+      <p id="res-fuga"></p>
+    </div>
+    <div class="areas" id="res-areas"></div>
+    <div class="cta-box">
+      <h2>El test te dijo DÓNDE. La sesión te dice CÓMO.</h2>
+      <p>Sesión de Evaluación Diagnóstica: 90 minutos 1:1, revisamos tu negocio completo y sales con una hoja de ruta de 30 días. $199 USD.</p>
+      <a class="btn" href="https://buy.stripe.com/3cI14n7ZP8wqeGM5vogUM02">Agendar mi sesión · $199</a>
+      <a class="wa" href="https://wa.me/17063327508?text=Hola%20Lorena,%20hice%20el%20test%20y%20quiero%20mi%20sesi%C3%B3n%20diagn%C3%B3stica">o escríbeme por WhatsApp →</a>
+    </div>
+    <p class="disclaimer">Este test es orientativo y no reemplaza un diagnóstico profesional completo. Los resultados de cualquier proceso dependen del punto de partida y la implementación de cada negocio. © 2026 Lorena Laverde · Método Rentable™</p>
+  </div>
+
+</div>
+
+<script>
+const AREAS = ['Dependencia de ti','Dinero y precios','Ventas','Procesos','Estrategia'];
+const FUGAS = {
+  'Dependencia de ti':'Tu negocio depende demasiado de tu presencia. Cada hora tuya es un cuello de botella: no puedes enfermarte, descansar ni crecer, porque todo pasa por ti. Es la fuga que convierte un negocio en un empleo caro.',
+  'Dinero y precios':'Estás decidiendo precios y midiendo ganancias a ciegas. Esta es la fuga más silenciosa: se puede facturar mucho y ganar poco durante años sin notarlo. Casi siempre hay dinero inmediato escondido aquí.',
+  'Ventas':'Te están preguntando más personas de las que compran — y no sabes exactamente dónde se pierden. Sin proceso comercial ni medición, cada lead que se enfría es dinero que ya tenías enfrente.',
+  'Procesos':'Tu operación vive en tu cabeza. Sin procesos documentados no puedes delegar, ni escalar, ni tomarte una semana libre. La buena noticia: es la fuga más rápida de cerrar cuando se trabaja con método.',
+  'Estrategia':'Tu negocio navega sin mapa: decisiones por urgencia, sin plan escrito ni metas medibles. Trabajas mucho — pero el esfuerzo sin dirección es la fuga más cara de todas.'
+};
+const PREGUNTAS = [
+ {a:0, t:'Si te desconectas una semana completa, ¿qué pasa con tu negocio?', o:[['Funciona: hay procesos y alguien más responde',2],['Sobrevive, pero todo se acumula hasta que vuelvo',1],['Se detiene: todo pasa por mí',0]]},
+ {a:0, t:'¿Cuántas decisiones del día a día puede tomar alguien más sin consultarte?', o:[['La mayoría',2],['Solo las básicas',1],['Prácticamente ninguna',0]]},
+ {a:1, t:'¿Sabes cuál de tus productos o servicios te deja MÁS utilidad (no el que más vendes)?', o:[['Sí, con números en la mano',2],['Tengo una idea, pero sin datos exactos',1],['No lo sé',0]]},
+ {a:1, t:'¿Cómo definiste tus precios actuales?', o:[['Con costos, margen y valor — y los reviso',2],['Mirando lo que cobra la competencia',1],['Por intuición, hace tiempo no los toco',0]]},
+ {a:2, t:'Cuando alguien pregunta por tus servicios, ¿qué pasa después?', o:[['Hay proceso: respuesta, propuesta y seguimiento',2],['Respondo como puedo; algunos se enfrían',1],['Muchos quedan sin seguimiento',0]]},
+ {a:2, t:'¿Sabes cuántas personas preguntaron el mes pasado y cuántas compraron?', o:[['Sí, mido mi conversión',2],['Aproximadamente',1],['No llevo ese registro',0]]},
+ {a:3, t:'Si mañana contrataras a alguien, ¿podrías entregarle instrucciones escritas de su trabajo?', o:[['Sí, tengo procesos documentados',2],['Parcialmente — la mitad está en mi cabeza',1],['No: tendría que enseñarle todo yo',0]]},
+ {a:3, t:'¿Con qué frecuencia apagas incendios en vez de trabajar en lo planificado?', o:[['Rara vez: mi semana se parece al plan',2],['Mitad plan, mitad incendios',1],['Vivo apagando incendios',0]]},
+ {a:4, t:'¿Tienes un plan escrito de los próximos 90 días con metas medibles?', o:[['Sí, y lo reviso',2],['Tengo objetivos generales, no escritos',1],['No',0]]},
+ {a:4, t:'Tu facturación en el último año…', o:[['Crece de forma sostenida',2],['Está estancada hace algunos meses',1],['Lleva más de un año igual o bajando',0]]}
+];
+
+let idx = 0;
+let scores = [0,0,0,0,0];
+let respuestas = [];
+
+function empezar(){
+  document.getElementById('intro').classList.add('hidden');
+  document.getElementById('quiz').classList.remove('hidden');
+  render();
+}
+function render(){
+  const q = PREGUNTAS[idx];
+  document.getElementById('bar').style.width = (idx/PREGUNTAS.length*100)+'%';
+  document.getElementById('qcount').textContent = 'Pregunta '+(idx+1)+' de '+PREGUNTAS.length;
+  document.getElementById('qarea').textContent = AREAS[q.a];
+  document.getElementById('qtext').textContent = q.t;
+  const box = document.getElementById('qopts');
+  box.innerHTML = '';
+  q.o.forEach(function(op){
+    const b = document.createElement('button');
+    b.className = 'opt';
+    b.textContent = op[0];
+    b.onclick = function(){ responder(q.a, op[1], op[0]); };
+    box.appendChild(b);
+  });
+}
+function responder(area, pts, texto){
+  scores[area] += pts;
+  respuestas.push(texto);
+  idx++;
+  if(idx < PREGUNTAS.length){ render(); }
+  else{
+    document.getElementById('quiz').classList.add('hidden');
+    document.getElementById('gate').classList.remove('hidden');
+    window.scrollTo(0,0);
+  }
+}
+function verResultado(){
+  const nombre = document.getElementById('f-nombre').value.trim();
+  const email = document.getElementById('f-email').value.trim();
+  if(!nombre || !email || email.indexOf('@') < 0){
+    alert('Escribe tu nombre y un correo válido para ver tu resultado.');
+    return;
+  }
+  const total = scores.reduce(function(a,b){return a+b;},0);
+  // enviar lead a Formspree (en segundo plano)
+  const fd = new FormData();
+  fd.append('origen','Test Diagnóstico Rentable');
+  fd.append('nombre',nombre);
+  fd.append('email',email);
+  fd.append('whatsapp',document.getElementById('f-whatsapp').value.trim());
+  fd.append('puntaje',total+'/20');
+  AREAS.forEach(function(a,i){ fd.append('área: '+a, scores[i]+'/4'); });
+  fd.append('respuestas', respuestas.join(' | '));
+  fetch('https://formspree.io/f/mqevjedk',{method:'POST',body:fd,headers:{'Accept':'application/json'}}).catch(function(){});
+  mostrarResultado(nombre,total);
+}
+function mostrarResultado(nombre,total){
+  document.getElementById('gate').classList.add('hidden');
+  document.getElementById('resultado').classList.remove('hidden');
+  window.scrollTo(0,0);
+  document.getElementById('res-score').textContent = total;
+  let titulo, texto;
+  if(total >= 16){
+    titulo = nombre+', tu negocio tiene bases sólidas.';
+    texto = 'Estás por encima de la mayoría: hay estructura, medición y dirección. Tu oportunidad ya no es tapar fugas — es acelerar. Los negocios en tu nivel son justamente los que más rápido crecen con estrategia fina, porque la base ya aguanta.';
+  } else if(total >= 9){
+    titulo = nombre+', tu negocio está dejando ir dinero — de forma constante.';
+    texto = 'No es crisis, y eso es precisamente la trampa: como nada duele lo suficiente, nada se corrige. Las fugas que muestra tu resultado se pagan todos los meses, en silencio. Este es el mejor momento para actuar: todavía decides sin presión.';
+  } else {
+    titulo = nombre+', tu negocio está en modo supervivencia.';
+    texto = 'Todo depende de ti, las decisiones se toman por urgencia y el esfuerzo no se está convirtiendo en resultados. No es falta de capacidad — es falta de estructura y diagnóstico. La buena noticia: desde este punto, los cambios correctos se sienten rápido.';
+  }
+  document.getElementById('res-titulo').textContent = titulo;
+  document.getElementById('res-texto').textContent = texto;
+  // fuga principal = área con menor puntaje
+  let min = 0;
+  scores.forEach(function(s,i){ if(s < scores[min]) min = i; });
+  document.getElementById('res-fuga').innerHTML = '<strong>'+AREAS[min]+':</strong> '+FUGAS[AREAS[min]];
+  // barras por área
+  const cont = document.getElementById('res-areas');
+  AREAS.forEach(function(a,i){
+    const pct = scores[i]/4*100;
+    const color = pct >= 75 ? 'var(--salvia)' : (pct >= 50 ? 'var(--oro)' : 'var(--terracota)');
+    cont.innerHTML += '<div class="area-row"><div class="area-nombre">'+a+'</div><div class="area-bar"><div style="width:'+pct+'%;background:'+color+';"></div></div></div>';
+  });
+}
+</script>
+</body>
+</html>
