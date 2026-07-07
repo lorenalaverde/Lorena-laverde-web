@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lorena Laverde · Neuropsicología del Bloqueo Femenino · Método ACCIÓN™</title>
+<link rel="canonical" href="https://lorenalaverde.com/metodo/metodo-accion.html">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://lorenalaverde.com/metodo/metodo-accion.html">
+<meta property="og:title" content="Método ACCIÓN™ · Lorena Laverde">
+<meta property="og:description" content="Descubre cuál de los 5 tipos de bloqueo te está frenando. Test gratuito de 5 minutos.">
+<meta property="og:image" content="https://lorenalaverde.com/images/foto-lorena-hero.jpg">
+<meta property="og:locale" content="es_LA">
+<meta name="description" content="Descubre cuál de los 5 tipos de bloqueo te está frenando. Test de Bloqueo Neurocultural™ gratuito — Método ACCIÓN™ por Lorena Laverde.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&family=DM+Mono&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --terracota: #C4652A;
+    --sage: #7A9E7E;
+    --cream: #F5EFE0;
+    --espresso: #3D2314;
+    --gold: #D4A853;
+    --cream-dark: #EDE5CF;
+    --espresso-light: #6B3F26;
+    --white: #FDFAF4;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--espresso); line-height: 1.7; overflow-x: hidden; }
+  .serif { font-family: 'Cormorant Garamond', serif; }
+  .mono { font-family: 'DM Mono', monospace; }
+  button { cursor: pointer; font-family: inherit; }
+  img { max-width: 100%; }
+
+  /* NAV */
+  .nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(61,35,20,0.97);
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 16px 40px;
+  }
+  .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 19px; color: var(--cream); font-weight: 600; letter-spacing: 0.5px; }
+  .nav-logo span { color: var(--terracota); font-style: italic; }
+  .nav-links { display: flex; gap: 28px; align-items: center; }
+  .nav-links a { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(245,239,224,0.55); text-decoration: none; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-cta { background: var(--terracota); color: var(--cream) !important; padding: 10px 20px; }
+
+  /* HERO */
+  .hero {
+    min-height: 92vh; background: var(--espresso);
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 80px 40px; position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: ''; position: absolute; top: -150px; right: -150px;
+    width: 560px; height: 560px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(196,101,42,0.18) 0%, transparent 68%);
+  }
+  .hero::after {
+    content: ''; position: absolute; bottom: -120px; left: -100px;
+    width: 420px; height: 420px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(212,168,83,0.1) 0%, transparent 70%);
+  }
+  .hero-inner { max-width: 880px; margin: 0 auto; position: relative; z-index: 1; width: 100%; }
+  .hero-eyebrow { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 36px; }
+  .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(42px, 7.5vw, 84px); font-weight: 300; color: var(--cream); line-height: 1.02; margin-bottom: 28px; }
+  .hero h1 em { font-style: italic; color: var(--terracota); }
+  .hero-sub { font-size: 16px; font-weight: 300; color: rgba(245,239,224,0.65); max-width: 560px; line-height: 1.85; margin-bottom: 44px; }
+  .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--terracota); color: var(--cream); border: none;
+    padding: 18px 40px; font-size: 12px; letter-spacing: 2px;
+    text-transform: uppercase; font-weight: 500; text-decoration: none; display: inline-block;
+    transition: background 0.2s;
+  }
+  .btn-primary:hover { background: #a85420; }
+  .btn-ghost {
+    background: transparent; color: rgba(245,239,224,0.7); border: 1px solid rgba(245,239,224,0.3);
+    padding: 18px 36px; font-size: 12px; letter-spacing: 2px;
+    text-transform: uppercase; font-weight: 400; text-decoration: none; display: inline-block;
+  }
+  .hero-cred { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(245,239,224,0.35); margin-top: 48px; line-height: 2; }
+
+  /* SECTION BASE */
+  .section { padding: 96px 40px; }
+  .section-inner { max-width: 880px; margin: 0 auto; }
+  .section-alt { background: var(--white); }
+  .section-dark { background: var(--espresso); }
+  .eyebrow { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--terracota); margin-bottom: 12px; }
+  .eyebrow.light { color: var(--gold); }
+  h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(30px, 4.5vw, 48px); font-weight: 400; line-height: 1.15; margin-bottom: 24px; }
+  h2.light { color: var(--cream); }
+  .section p { font-size: 15px; font-weight: 300; line-height: 1.9; margin-bottom: 18px; }
+  .section p.light { color: rgba(245,239,224,0.7); }
+
+  /* QUOTE */
+  .quote {
+    font-family: 'Cormorant Garamond', serif; font-size: clamp(20px, 3vw, 28px);
+    font-style: italic; font-weight: 300; color: var(--terracota); line-height: 1.55;
+    padding: 40px 0; border-top: 1px solid rgba(196,101,42,0.25);
+    border-bottom: 1px solid rgba(196,101,42,0.25); margin: 40px 0;
+  }
+
+  /* ARQUETIPOS GRID */
+  .arq-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2px; margin: 48px 0 24px; }
+  .arq-card { background: var(--espresso); padding: 32px 28px; transition: background 0.2s; }
+  .arq-card:hover { background: var(--espresso-light); }
+  .arq-num { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 300; color: var(--terracota); opacity: 0.6; margin-bottom: 14px; }
+  .arq-name { font-family: 'Cormorant Garamond', serif; font-size: 21px; font-weight: 600; color: var(--cream); margin-bottom: 6px; line-height: 1.25; }
+  .arq-cause { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; opacity: 0.8; }
+  .arq-quote { font-size: 13px; font-style: italic; color: rgba(245,239,224,0.6); line-height: 1.7; }
+
+  /* MÉTODO */
+  .metodo-steps { margin: 44px 0; }
+  .metodo-step { display: flex; gap: 26px; padding: 24px 0; border-bottom: 1px solid rgba(61,35,20,0.1); }
+  .metodo-letter { font-family: 'Cormorant Garamond', serif; font-size: 42px; font-weight: 300; color: var(--terracota); min-width: 52px; line-height: 1; opacity: 0.7; }
+  .metodo-step h3 { font-size: 17px; font-weight: 600; margin-bottom: 6px; }
+  .metodo-step p { font-size: 13.5px; color: var(--espresso-light); margin: 0; line-height: 1.7; }
+
+  /* OFERTA */
+  .oferta-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2px; margin: 44px 0; }
+  .oferta-card { background: var(--cream-dark); padding: 38px 32px; display: flex; flex-direction: column; }
+  .oferta-card.featured { background: var(--espresso); }
+  .oferta-tag { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--terracota); margin-bottom: 14px; }
+  .oferta-card.featured .oferta-tag { color: var(--gold); }
+  .oferta-title { font-family: 'Cormorant Garamond', serif; font-size: 23px; font-weight: 600; margin-bottom: 10px; line-height: 1.2; }
+  .oferta-card.featured .oferta-title { color: var(--cream); }
+  .oferta-price { font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 300; color: var(--terracota); margin-bottom: 16px; }
+  .oferta-desc { font-size: 13.5px; color: var(--espresso-light); line-height: 1.75; margin-bottom: 24px; flex: 1; }
+  .oferta-card.featured .oferta-desc { color: rgba(245,239,224,0.65); }
+  .oferta-cta { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--espresso); border: 1px solid var(--espresso); padding: 13px; text-align: center; text-decoration: none; }
+  .oferta-card.featured .oferta-cta { background: var(--terracota); color: var(--cream); border-color: var(--terracota); }
+
+  /* SOBRE */
+  .sobre-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
+  .cred-list { list-style: none; margin-top: 24px; }
+  .cred-list li { font-size: 14px; padding: 13px 0 13px 24px; position: relative; border-bottom: 1px solid rgba(245,239,224,0.1); color: rgba(245,239,224,0.7); font-weight: 300; }
+  .cred-list li::before { content: '✦'; position: absolute; left: 0; color: var(--gold); font-size: 11px; }
+
+  /* TEST APP */
+  .test-app { max-width: 680px; margin: 0 auto; }
+  .test-hidden { display: none !important; }
+  .progress-bar { height: 3px; background: var(--cream-dark); margin-bottom: 44px; }
+  .progress-fill { height: 100%; width: 0%; background: var(--terracota); transition: width 0.3s; }
+  .q-count { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--terracota); margin-bottom: 18px; }
+  .q-text { font-family: 'Cormorant Garamond', serif; font-size: clamp(22px, 4vw, 30px); font-weight: 400; font-style: italic; line-height: 1.4; margin-bottom: 40px; }
+  .q-options { display: flex; flex-direction: column; gap: 8px; }
+  .q-opt {
+    display: flex; align-items: center; gap: 18px; padding: 15px 22px;
+    background: var(--white); border: 1px solid rgba(61,35,20,0.12);
+    text-align: left; font-size: 14px; font-weight: 300; transition: all 0.15s; width: 100%;
+  }
+  .q-opt:hover { background: var(--espresso); color: var(--cream); }
+  .q-opt .num { font-family: 'Cormorant Garamond', serif; font-size: 21px; font-weight: 300; color: var(--terracota); min-width: 22px; }
+  .q-back { background: none; border: none; color: var(--espresso-light); font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1px; text-transform: uppercase; margin-top: 28px; opacity: 0.6; }
+
+  /* DATOS FORM */
+  .datos-form input {
+    width: 100%; padding: 16px 20px; font-size: 15px;
+    border: 1px solid rgba(61,35,20,0.2); background: var(--white);
+    margin-bottom: 12px; font-family: inherit; color: var(--espresso); outline: none;
+  }
+  .datos-form input:focus { border-color: var(--terracota); }
+
+  /* RESULTADO */
+  .res-hero { background: var(--espresso); padding: 64px 32px 48px; text-align: center; margin: 0 -40px; }
+  .res-name { font-family: 'Cormorant Garamond', serif; font-size: clamp(32px, 6vw, 52px); font-weight: 300; color: var(--cream); line-height: 1.1; margin-bottom: 12px; }
+  .res-cause { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--terracota); margin-bottom: 30px; }
+  .res-voice { font-family: 'Cormorant Garamond', serif; font-size: clamp(16px, 2.8vw, 21px); font-style: italic; font-weight: 300; color: rgba(245,239,224,0.75); line-height: 1.6; max-width: 580px; margin: 0 auto; padding: 26px 0; border-top: 1px solid rgba(245,239,224,0.15); border-bottom: 1px solid rgba(245,239,224,0.15); }
+  .score-row { margin-bottom: 13px; }
+  .score-head { display: flex; justify-content: space-between; margin-bottom: 5px; font-size: 13px; }
+  .score-track { height: 8px; background: var(--cream-dark); }
+  .score-fill { height: 100%; transition: width 0.6s ease; }
+  .res-box-dark { background: var(--espresso); border-left: 3px solid var(--terracota); padding: 24px 28px; margin: 22px 0; }
+  .res-box-dark p { color: rgba(245,239,224,0.8) !important; margin: 0 !important; font-size: 14px !important; }
+  .res-box-dark .label { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+  .res-box-gold { background: var(--gold); border-left: 3px solid var(--espresso); padding: 24px 28px; margin: 22px 0; }
+  .res-box-gold p { color: var(--espresso) !important; margin: 0 !important; font-size: 14px !important; font-weight: 400 !important; }
+  .res-box-gold .label { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--espresso); opacity: 0.7; margin-bottom: 8px; }
+  .tools { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 28px; }
+  .tool { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 1px; text-transform: uppercase; padding: 8px 13px; background: var(--cream-dark); border: 1px solid rgba(61,35,20,0.12); }
+  .ruta-step { display: flex; background: var(--cream-dark); margin-bottom: 2px; }
+  .ruta-step.cta-step { background: var(--espresso); }
+  .ruta-num { min-width: 54px; display: flex; align-items: center; justify-content: center; background: var(--espresso); font-family: 'Cormorant Garamond', serif; font-size: 21px; font-weight: 300; color: var(--terracota); }
+  .ruta-step.cta-step .ruta-num { background: var(--terracota); color: var(--cream); }
+  .ruta-body { padding: 20px 24px; flex: 1; }
+  .ruta-fase { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--terracota); margin-bottom: 5px; }
+  .ruta-step.cta-step .ruta-fase { color: var(--gold); }
+  .ruta-title { font-size: 15px; font-weight: 600; margin-bottom: 5px; }
+  .ruta-step.cta-step .ruta-title { color: var(--cream); }
+  .ruta-desc { font-size: 13px !important; color: var(--espresso-light) !important; line-height: 1.7 !important; margin: 0 !important; }
+  .ruta-step.cta-step .ruta-desc { color: rgba(245,239,224,0.7) !important; }
+  .res-dm-cta { background: var(--espresso); padding: 40px 32px; text-align: center; margin: 36px 0 24px; }
+
+  /* FOOTER */
+  .footer { background: var(--espresso); padding: 64px 40px 40px; text-align: center; }
+  .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 26px; color: var(--cream); font-weight: 300; margin-bottom: 8px; }
+  .footer-logo span { color: var(--terracota); font-style: italic; }
+  .footer-tag { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: rgba(245,239,224,0.3); margin-bottom: 32px; }
+  .footer-social { display: flex; justify-content: center; gap: 24px; margin-bottom: 40px; }
+  .footer-social a { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(245,239,224,0.5); text-decoration: none; }
+  .footer-social a:hover { color: var(--gold); }
+  .footer-legal { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 1px; color: rgba(245,239,224,0.2); text-transform: uppercase; }
+
+  /* ═══ JUEGO: LA SEMANA DECISIVA ═══ */
+  .juego-wrap { max-width: 680px; margin: 0 auto; }
+  .j-hidden { display: none !important; }
+  .j-dias { display: flex; gap: 6px; justify-content: center; flex-wrap: wrap; margin-bottom: 36px; }
+  .j-dia { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 1px; text-transform: uppercase; padding: 5px 11px; color: rgba(61,35,20,0.3); border-bottom: 1px solid transparent; }
+  .j-dia.activo { background: var(--terracota); color: var(--cream); }
+  .j-dia.pasado { color: var(--terracota); border-bottom-color: var(--terracota); }
+  .j-icono { text-align: center; font-size: 38px; margin-bottom: 8px; }
+  .j-fase { text-align: center; font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--terracota); margin-bottom: 10px; }
+  .j-titulo { text-align: center; font-family: 'Cormorant Garamond', serif; font-size: clamp(25px, 5vw, 34px); font-weight: 600; line-height: 1.2; margin-bottom: 22px; }
+  .j-historia { background: var(--white); border: 1px solid rgba(61,35,20,0.1); border-left: 3px solid var(--gold); padding: 22px 26px; margin-bottom: 26px; }
+  .j-historia p { font-size: 15px; font-style: italic; line-height: 1.85; margin: 0; }
+  .j-pregunta { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--terracota); margin-bottom: 14px; }
+  .j-opciones { display: flex; flex-direction: column; gap: 8px; }
+  .j-opt { text-align: left; padding: 15px 19px; background: var(--cream-dark); border: 1px solid rgba(61,35,20,0.1); font-size: 13.5px; font-weight: 300; line-height: 1.65; color: var(--espresso); transition: all 0.15s; width: 100%; }
+  .j-opt:hover { background: var(--espresso); color: var(--cream); }
+  .j-rev-hero { background: var(--espresso); padding: 56px 28px 44px; text-align: center; margin: 0 -40px; }
+  .j-rev-emoji { font-size: 42px; margin-bottom: 14px; }
+  .j-rev-nombre { font-family: 'Cormorant Garamond', serif; font-size: clamp(30px, 6vw, 50px); font-weight: 300; color: var(--cream); line-height: 1.08; margin-bottom: 10px; }
+  .j-rev-causa { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--terracota); }
+  .j-espejo-label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--terracota); margin: 40px 0 12px; }
+  .menu-btn{display:none;background:none;border:none;font-size:26px;color:var(--cream, #F5EFE0);cursor:pointer;line-height:1;}
+  @media (max-width: 760px) {
+    .nav { padding: 14px 20px; }
+    .menu-btn{display:block;}
+    .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:rgba(61,35,20,0.98);flex-direction:column;align-items:center;padding:18px 24px;gap:16px;box-shadow:0 12px 24px rgba(0,0,0,0.35);}
+    .nav-links.open{display:flex;}
+    .nav-links a{font-size:12px;}
+    .hero, .section { padding: 64px 24px; }
+    .sobre-grid { grid-template-columns: 1fr; gap: 32px; }
+    .res-hero { margin: 0 -24px; }
+    .j-rev-hero { margin: 0 -24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a class="nav-logo" href="../index.html" style="text-decoration:none;">Lorena <span>Laverde</span></a>
+  <button class="menu-btn" aria-label="Abrir menú" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+  <div class="nav-links" onclick="this.classList.remove('open')">
+    <a href="../index.html">← Consultoría</a>
+    <a href="#metodo">El Método</a>
+    <a href="#juego">El Juego</a>
+    <a href="#arquetipos">Los 5 Bloqueos</a>
+    <a href="#trabajar">Trabajar Conmigo</a>
+    <a href="#sobre">Sobre Lorena</a>
+    <a href="#test" class="nav-cta">Hacer el Test</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-inner" style="display:grid;grid-template-columns:1.4fr 1fr;gap:44px;align-items:center;max-width:1080px;">
+  <div>
+    <div class="hero-eyebrow">Neuropsicología del Bloqueo Femenino · Método ACCIÓN™</div>
+    <h1>Sabes exactamente<br>lo que vales.<br><em>¿Por qué no puedes<br>actuar desde ahí?</em></h1>
+    <p class="hero-sub">No es falta de ganas. No es falta de preparación. Es un patrón específico, con un mecanismo específico — y una solución específica. Descubre cuál de los 5 tipos de bloqueo es el tuyo.</p>
+    <div class="hero-actions">
+      <a href="#juego" class="btn-primary">Jugar La Semana Decisiva →</a>
+      <a href="#test" class="btn-ghost">Hacer el test</a>
+    </div>
+    <div class="hero-cred">Máster en Coaching y Mentoring (UNIR) · Máster en Neuroventas · Certificada por Jürgen Klarić</div>
+  </div>
+  <img src="../images/foto-lorena-hero.jpg" fetchpriority="high" width="1195" height="1800" alt="Lorena Laverde, creadora del Método ACCIÓN" onerror="this.style.display='none'" style="width:100%;max-height:520px;object-fit:cover;object-position:top center;border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,0.45);">
+  </div>
+</header>
+<style>@media(max-width:820px){.hero-inner{grid-template-columns:1fr !important;}}</style>
+
+<!-- PROBLEMA -->
+<section class="section">
+  <div class="section-inner">
+    <div class="eyebrow">El problema que nadie había nombrado</div>
+    <h2>La Brecha del Valor</h2>
+    <p>Millones de mujeres viven atrapadas entre lo que son y lo que se permiten hacer. Saben que valen. Saben lo que quieren. Pero algo se activa — una voz, un freno, un bloqueo — que las detiene exactamente cuando deberían actuar. Y lo peor: no entienden por qué.</p>
+    <p>Lo intentan todo: más motivación, más cursos, más afirmaciones. Se sienten bien tres días y el bloqueo vuelve. ¿La razón? La motivación trabaja en el sistema consciente. <strong>El bloqueo vive en el sistema nervioso</strong> — más profundo, más rápido, con más prioridad.</p>
+    <div class="quote">"No necesitas más motivación. Necesitas entender por qué no actúas — y esa es una pregunta que tiene respuesta científica."</div>
+    <p>Mientras no entiendas qué tipo de bloqueo tienes ni por qué se activó, puedes tener toda la motivación del mundo y seguir sin actuar. El Método ACCIÓN™ trabaja donde el problema vive: en el mecanismo, no en el ánimo.</p>
+  </div>
+</section>
+
+<!-- ARQUETIPOS -->
+<section class="section section-alt" id="arquetipos">
+  <div class="section-inner">
+    <div class="eyebrow">Diagnóstico diferencial</div>
+    <h2>No todos los bloqueos son iguales.<br>El tuyo tiene nombre.</h2>
+    <p>Cada tipo de bloqueo tiene una causa raíz distinta — y cada uno se desactiva diferente. Tratar todos los bloqueos igual es el error que comete el 90% de los programas de desarrollo personal. Estos son los cinco:</p>
+
+    <div class="arq-grid">
+      <div class="arq-card">
+        <div class="arq-num">1</div>
+        <div class="arq-name">La Preparada Paralizada</div>
+        <div class="arq-cause">Déficit de autoeficacia</div>
+        <p class="arq-quote">"Espero a estar más lista. Y mientras tanto, otras con la mitad de mi preparación ya están cobrando el doble."</p>
+      </div>
+      <div class="arq-card">
+        <div class="arq-num">2</div>
+        <div class="arq-name">La que Sabe Pero Evita</div>
+        <div class="arq-cause">Evitación emocional</div>
+        <p class="arq-quote">"Sé exactamente lo que tengo que hacer. Pero cuando llega el momento, algo me paraliza."</p>
+      </div>
+      <div class="arq-card">
+        <div class="arq-num">3</div>
+        <div class="arq-name">La Impostora Funcional</div>
+        <div class="arq-cause">Incongruencia de identidad</div>
+        <p class="arq-quote">"Cuando cobro ese precio, hay algo que siente que estoy mintiendo. Que no soy esa persona."</p>
+      </div>
+      <div class="arq-card">
+        <div class="arq-num">4</div>
+        <div class="arq-name">La que No Se Da Permiso</div>
+        <div class="arq-cause">Mandatos culturales</div>
+        <p class="arq-quote">"Cuando cobro bien, cuando pongo límites — me siento egoísta. Como si estuviera traicionando algo."</p>
+      </div>
+      <div class="arq-card">
+        <div class="arq-num">5</div>
+        <div class="arq-name">La que Necesita Otra Cosa</div>
+        <div class="arq-cause">Déficit de recursos</div>
+        <p class="arq-quote">"No es que no quiera actuar. Es que genuinamente no tengo lo que necesito. Mi problema no es psicológico."</p>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:36px;">
+      <a href="#test" class="btn-primary">Descubrir cuál es el mío →</a>
+    </div>
+  </div>
+</section>
+
+<!-- MÉTODO -->
+<section class="section" id="metodo">
+  <div class="section-inner">
+    <div class="eyebrow">El sistema completo</div>
+    <h2>El Método ACCIÓN™</h2>
+    <p>Un sistema de intervención conductual e identitaria que cierra la brecha entre tu valor reconocido y tu capacidad de actuar desde él. Seis etapas. Herramientas específicas por tipo de bloqueo. Resultados medibles — no sensaciones.</p>
+
+    <div class="metodo-steps">
+      <div class="metodo-step">
+        <div class="metodo-letter">A</div>
+        <div><h3>Autodiagnóstico de Bloqueo</h3><p>Le ponemos nombre exacto a lo que te frena. No es lo mismo el miedo al juicio que no verte como alguien que hace eso — cada uno se desactiva diferente.</p></div>
+      </div>
+      <div class="metodo-step">
+        <div class="metodo-letter">C</div>
+        <div><h3>Comprensión del Mecanismo</h3><p>Entiendes por qué tu sistema nervioso aprendió esta respuesta. La vergüenza se convierte en claridad — y dejas de pelear contigo misma.</p></div>
+      </div>
+      <div class="metodo-step">
+        <div class="metodo-letter">C</div>
+        <div><h3>Cimentación de Identidad de Acción</h3><p>No afirmaciones — trabajo real. Reescribes tu historia desde el valor que ya ejerciste y defines quién eres con comportamientos concretos y observables.</p></div>
+      </div>
+      <div class="metodo-step">
+        <div class="metodo-letter">I</div>
+        <div><h3>Instalación de Protocolos</h3><p>La acción no puede depender de que ese día te sientas valiente. Construimos protocolos if-then que funcionan aunque tengas miedo.</p></div>
+      </div>
+      <div class="metodo-step">
+        <div class="metodo-letter">Ó</div>
+        <div><h3>Obtención de Evidencia</h3><p>Tu Banco de Evidencia Personal™: el registro de hechos que reemplaza para siempre la necesidad de que alguien te diga que puedes.</p></div>
+      </div>
+      <div class="metodo-step">
+        <div class="metodo-letter">N</div>
+        <div><h3>Navegación del Nuevo Territorio</h3><p>El sistema que hace que el cambio dure. Anticipamos las regresiones y diseñamos las respuestas antes de que el mundo haga presión.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JUEGO: LA SEMANA DECISIVA -->
+<section class="section" id="juego">
+  <div class="section-inner">
+    <div class="juego-wrap">
+
+      <!-- PORTADA DEL JUEGO -->
+      <div id="j-portada">
+        <div style="text-align:center; font-size:42px; margin-bottom:14px;">🗝️</div>
+        <div class="eyebrow" style="text-align:center;">Un juego del Método ACCIÓN™ · 3 minutos</div>
+        <h2 style="text-align:center;">La Semana Decisiva™</h2>
+        <p style="text-align:center; max-width:520px; margin:0 auto 14px;">Vas a vivir una semana. Siete días, siete situaciones que toda mujer que construye algo conoce de memoria.</p>
+        <p style="text-align:center; max-width:520px; margin:0 auto 32px;">No hay respuestas correctas. Solo una regla: <strong>responde lo que HARÍAS de verdad</strong> — no lo que te gustaría hacer. Al final del domingo, tu bloqueo se habrá revelado solo.</p>
+        <div style="text-align:center;">
+          <button class="btn-primary" onclick="jIniciar()">Empezar mi semana →</button>
+        </div>
+      </div>
+
+      <!-- ESCENA -->
+      <div id="j-escena" class="j-hidden">
+        <div class="j-dias" id="j-dias"></div>
+        <div class="j-icono" id="j-icono"></div>
+        <div class="j-fase" id="j-fase"></div>
+        <div class="j-titulo" id="j-titulo"></div>
+        <div class="j-historia"><p id="j-historia"></p></div>
+        <div class="j-pregunta" id="j-pregunta"></div>
+        <div class="j-opciones" id="j-opciones"></div>
+      </div>
+
+      <!-- REVELACIÓN -->
+      <div id="j-revelacion" class="j-hidden"></div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TEST INTERACTIVO -->
+<section class="section section-alt" id="test">
+  <div class="section-inner">
+    <div class="test-app">
+
+      <!-- VISTA INTRO -->
+      <div id="t-intro">
+        <div class="eyebrow" style="text-align:center;">Test de Bloqueo Neurocultural™ · Gratuito</div>
+        <h2 style="text-align:center;">Diagnostica tu tipo<br>de bloqueo en 5 minutos</h2>
+        <p style="text-align:center; max-width:520px; margin:0 auto 36px;">25 preguntas. Resultado inmediato y personalizado: tu arquetipo dominante, el mecanismo detrás, y tu ruta exacta a seguir.</p>
+        <div style="text-align:center;">
+          <button class="btn-primary" onclick="iniciarTest()">Comenzar mi diagnóstico →</button>
+        </div>
+      </div>
+
+      <!-- VISTA PREGUNTAS -->
+      <div id="t-preguntas" class="test-hidden">
+        <div class="progress-bar"><div class="progress-fill" id="t-progress"></div></div>
+        <div class="q-count" id="t-count"></div>
+        <div class="q-text" id="t-texto"></div>
+        <div class="q-options" id="t-opciones"></div>
+        <button class="q-back" onclick="anterior()">← Anterior</button>
+      </div>
+
+      <!-- VISTA DATOS -->
+      <div id="t-datos" class="test-hidden">
+        <div class="eyebrow">Tu diagnóstico está listo</div>
+        <h2 style="font-size:clamp(26px,4.5vw,38px);">¿A nombre de quién<br>preparamos tu resultado?</h2>
+        <p style="font-size:14px; color:var(--espresso-light);">Recibirás también tu ruta personalizada y las herramientas de tu arquetipo en tu correo.</p>
+        <div class="datos-form">
+          <input type="text" id="t-nombre" placeholder="Tu nombre">
+          <input type="email" id="t-email" placeholder="Tu correo electrónico">
+          <button class="btn-primary" style="width:100%; margin-top:10px;" onclick="verResultado()">Ver mi resultado →</button>
+        </div>
+        <p class="mono" style="font-size:9px; color:var(--espresso-light); opacity:0.6; margin-top:14px; letter-spacing:0.5px;">TU INFORMACIÓN SOLO SE USA PARA ENTREGARTE TU DIAGNÓSTICO Y TU RUTA.</p>
+      </div>
+
+      <!-- VISTA RESULTADO -->
+      <div id="t-resultado" class="test-hidden"></div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TRABAJAR CONMIGO -->
+<section class="section" id="trabajar">
+  <div class="section-inner">
+    <div class="eyebrow">Trabajar conmigo</div>
+    <h2>Tu camino dentro del método</h2>
+    <div class="oferta-grid">
+      <div class="oferta-card">
+        <div class="oferta-tag">Punto de partida</div>
+        <div class="oferta-title">Sesión de Diagnóstico Individual</div>
+        <div class="oferta-price">$199</div>
+        <p class="oferta-desc">90 minutos uno a uno. Diagnóstico diferencial en profundidad de tu tipo de bloqueo + diseño de tu protocolo personalizado. Sales con claridad exacta de qué te frena y qué hacer — esta misma semana.</p>
+        <a href="https://ig.me/m/lorenalaverdeofficial" class="oferta-cta">Escribe DIAGNÓSTICO al DM</a>
+      </div>
+      <div class="oferta-card featured">
+        <div class="oferta-tag">El proceso completo</div>
+        <div class="oferta-title">Programa ACCIÓN™ — 12 Semanas</div>
+        <div class="oferta-price"><span style="font-size:0.55em;opacity:0.6;text-decoration:line-through;">$497</span> $397</div>
+        <p class="oferta-desc"><strong>Precio de fundadoras — solo primera cohorte.</strong> Desde la segunda cohorte: $497. Las 6 etapas completas del método en formato grupal íntimo (máx. 15 mujeres). Sesiones semanales en vivo, comunidad privada, todas las herramientas, y un sistema de medición real de tu transformación — antes, durante y 90 días después.</p>
+        <a href="https://ig.me/m/lorenalaverdeofficial" class="oferta-cta">Escribe ACCIÓN al DM</a>
+      </div>
+      <div class="oferta-card">
+        <div class="oferta-tag">Para organizaciones</div>
+        <div class="oferta-title">Programas Corporativos y Conferencias</div>
+        <div class="oferta-price serif" style="font-size:20px;">A medida</div>
+        <p class="oferta-desc">Liderazgo femenino aplicado para empresas y organizaciones: retención de talento femenino, cierre de la brecha de confianza en liderazgo, conferencias y keynotes. El método en lenguaje de resultados.</p>
+        <a href="mailto:hola@lorenalaverde.com" class="oferta-cta">Solicitar propuesta</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section class="section section-dark" id="sobre">
+  <div class="section-inner">
+    <div class="sobre-grid">
+      <div>
+        <div class="eyebrow light">Sobre Lorena</div>
+        <h2 class="light">La persona que convierte la neurociencia del bloqueo en arquitectura de acción</h2>
+        <p class="light">Ecuatoriana en Estados Unidos, sirvo como puente de conocimiento internacional para mujeres latinas. No te digo que puedes. Te explico por qué no has podido — y te doy el mapa para cambiar eso.</p>
+        <p class="light">Mi trabajo une la neuropsicología aplicada con la realidad cultural de la mujer latina: los mandatos que aprendimos, los permisos que nunca nos dimos, y el mecanismo exacto para cerrarle la puerta al bloqueo y abrírsela a la acción.</p>
+      </div>
+      <div>
+        <img src="../images/foto-lorena.jpg" loading="lazy" width="1195" height="1800" alt="Lorena Laverde, creadora del Método ACCIÓN" style="width:100%;max-height:420px;object-fit:cover;object-position:top center;border-radius:14px;margin-bottom:24px;display:block;">
+        <ul class="cred-list">
+          <li>Máster en Coaching y Mentoring — Universidad UNIR</li>
+          <li>Máster en Neuroventas · Certificada por Jürgen Klarić</li>
+          <li>Máster en Marketing Digital</li>
+          <li>Ingeniera Comercial</li>
+          <li>Formación con Tony Robbins y Margarita Pasos</li>
+          <li>Creadora del Método ACCIÓN™</li>
+          <li>Creadora del Test de Bloqueo Neurocultural™</li>
+          <li>Mentora en liderazgo femenino y neuropsicología de la acción</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-logo">Wellness Real · <span>Vida Real</span></div>
+  <div class="footer-tag">Lorena Laverde · Neuropsicología de la Acción Femenina</div>
+  <div class="footer-social">
+    <a href="https://instagram.com/lorenalaverdeofficial" target="_blank">Instagram</a>
+    <a href="https://www.tiktok.com/@lorenalaverdeofficial" target="_blank">TikTok</a>
+    <a href="https://www.linkedin.com/in/lorena-laverde" target="_blank">LinkedIn</a>
+  </div>
+  <div class="footer-legal">© 2026 Lorena Laverde · Método ACCIÓN™ · Todos los derechos reservados · El método no sustituye atención psicológica profesional</div>
+</footer>
+
+<script>
+// ═══════════ DATOS DEL TEST ═══════════
+const ARQ = {
+  capacidad: {
+    nombre: "La Preparada Paralizada", sub: "Bloqueo por Capacidad",
+    causa: "Déficit de autoeficacia · \"No soy suficientemente buena todavía\"",
+    voz: "Espero a estar más lista. A tener más experiencia. A sentirme más segura. Y mientras tanto, otras mujeres con la mitad de mi preparación ya están cobrando el doble.",
+    mecanismo: "Tu cerebro compara tu nivel actual con un estándar que siempre se mueve un paso más adelante. Tienes más preparación que el promedio de tu campo — pero tu sistema de autoeficacia no registra esa evidencia. Por eso un curso más nunca es suficiente: el problema no es de conocimiento, es de registro interno.",
+    noFunciona: "Más cursos, más certificaciones, más preparación. Cada nueva credencial alimenta el ciclo en vez de romperlo.",
+    etapa: "Ó — Obtención de Evidencia",
+    herramientas: ["Banco de Evidencia Personal™", "Acción de exposición", "Anclaje Verbal de Evidencia™"],
+    primerPaso: "Esta semana: una acción de exposición pequeña ejecutada ANTES de sentirte lista — y documentada el mismo día en tu Banco de Evidencia. No necesitas más preparación. Necesitas registro de que ya puedes."
+  },
+  emocion: {
+    nombre: "La que Sabe Pero Evita", sub: "Bloqueo por Emoción",
+    causa: "Evitación emocional · \"Sé lo que tengo que hacer pero no puedo hacerlo\"",
+    voz: "Sé exactamente lo que tengo que hacer. Incluso cómo hacerlo. Pero cuando llega el momento, algo me paraliza. No es ignorancia. Es algo que no puedo controlar con la cabeza.",
+    mecanismo: "Tu capacidad analítica es alta — puedes explicar perfectamente lo que deberías hacer. Pero la anticipación del malestar (vergüenza, rechazo, fracaso) activa tu sistema de evitación antes de que la lógica pueda intervenir. No es falta de información — es que el malestar anticipado gana la carrera.",
+    noFunciona: "Más información, más planes, más análisis. Tu mente ya sabe — el bloqueo no vive ahí.",
+    etapa: "I — Instalación de Protocolos",
+    herramientas: ["Protocolo if-then™", "Escala de exposición progresiva", "Registro de Acción™"],
+    primerPaso: "Esta semana: escribe un protocolo if-then concreto — \"Cuando llegue [situación exacta], hago [acción exacta]\" — para la situación que más postergas. La acción ocurre por diseño, no por valentía del día."
+  },
+  identidad: {
+    nombre: "La Impostora Funcional", sub: "Bloqueo por Identidad",
+    causa: "Incongruencia de identidad · \"No me veo como alguien que hace eso\"",
+    voz: "Cuando cobro ese precio, cuando me presento como experta, cuando lidero en público — hay algo que siente que estoy mintiendo. Como si en cualquier momento alguien fuera a descubrir que no soy esa persona.",
+    mecanismo: "Puedes actuar el papel — pero lo sientes artificial. La acción no amenaza tus capacidades: amenaza tu identidad actual. Mientras tu autoimagen no incluya a \"la mujer que cobra eso\", cada vez que lo hagas se sentirá como fraude, aunque el resultado sea excelente.",
+    noFunciona: "Afirmaciones diarias y \"actuar como si\". Decirlo no lo instala — la identidad se cimenta con evidencia retrospectiva, no con frases.",
+    etapa: "C2 — Cimentación de Identidad",
+    herramientas: ["Historia Revisada™", "Contrato de Identidad™", "Banco de Evidencia retrospectivo"],
+    primerPaso: "Esta semana: escribe tu Historia Revisada — tres momentos de tu pasado donde ya actuaste desde tu valor pero nunca te diste crédito. Tu nueva identidad no es aspiracional: es retrospectiva. Ya eres esto. Falta la prueba escrita."
+  },
+  cultura: {
+    nombre: "La que No Se Da Permiso", sub: "Bloqueo por Cultura",
+    causa: "Mandatos culturales · \"Las mujeres de mi familia no hacen esto\"",
+    voz: "Cuando cobro bien, cuando me expongo, cuando pongo límites — me siento egoísta. Como si estuviera traicionando algo. No sé si es mi familia, mi cultura o algo que me enseñaron, pero se siente como una traición.",
+    mecanismo: "La culpa aparece justo DESPUÉS del logro, no antes. Cobrar bien genera vergüenza, no orgullo. Operan en ti mandatos aprendidos sobre las mujeres, el dinero y el espacio que \"merecen\" ocupar — instrucciones que te instalaron sin pedirte permiso.",
+    noFunciona: "Reprogramación individual sin mirar lo cultural. El bloqueo no nació en ti — nació en lo que te enseñaron. Ahí hay que trabajar.",
+    etapa: "C1 — Comprensión + Inventario Cultural",
+    herramientas: ["Inventario de Mandatos Culturales™", "Mapa de Resistencia™", "Resignificación cultural"],
+    primerPaso: "Esta semana: escribe las tres frases sobre dinero y mujeres que escuchaste de niña en tu casa. Ese es el inicio de tu Inventario de Mandatos Culturales — no puedes desactivar una instrucción que no has nombrado."
+  },
+  recursos: {
+    nombre: "La que Necesita Otra Cosa", sub: "Bloqueo por Recursos",
+    causa: "Déficit de recursos concretos · No es psicológico",
+    voz: "No es que no quiera actuar. Es que genuinamente no tengo lo que necesito para hacerlo — tiempo, dinero, información, herramientas. Mi problema no es psicológico.",
+    mecanismo: "Tu bloqueo desaparece cuando se resuelve el déficit concreto. No hay carga emocional significativa — falta algo específico y tangible. Y aquí va la honestidad que pocos programas te dirán: el trabajo de identidad y los protocolos emocionales NO son lo que necesitas ahora.",
+    noFunciona: "Programas de mindset, trabajo emocional, coaching de identidad. Tratarte con intervención emocional sería ineficiente — y no es honesto venderte eso.",
+    etapa: "Derivación honesta",
+    herramientas: ["Identificación del recurso faltante", "Redirección a recursos concretos"],
+    primerPaso: "Define con precisión QUÉ recurso te falta (tiempo, capital, información, una habilidad técnica) y busca la fuente directa de ese recurso. Cuando lo resuelvas — si entonces aparece un freno interno — el Método ACCIÓN™ estará aquí para ti."
+  }
+};
+
+const RUTAS = {
+  capacidad: [
+    { fase: "1 · Esta semana", titulo: "Tu primera acción de exposición", desc: "Una acción pequeña ejecutada antes de sentirte lista, documentada el mismo día en tu Banco de Evidencia." },
+    { fase: "2 · Sesión de Diagnóstico · $199", titulo: "90 minutos con Lorena", desc: "Diagnóstico diferencial en profundidad + tu protocolo personalizado de exposición progresiva.", cta: true },
+    { fase: "3 · Programa ACCIÓN™ · 12 semanas", titulo: "Las 6 etapas completas", desc: "Tu foco será la etapa Ó: construir el Banco de Evidencia que reemplaza para siempre la necesidad de \"estar más preparada\"." }
+  ],
+  emocion: [
+    { fase: "1 · Esta semana", titulo: "Tu primer protocolo if-then", desc: "Situación exacta + acción exacta, por escrito. La acción ocurre por diseño, no por cómo amanezcas." },
+    { fase: "2 · Sesión de Diagnóstico · $199", titulo: "90 minutos con Lorena", desc: "Diseño de tu escala de exposición progresiva personalizada — nivel bajo, medio y alto.", cta: true },
+    { fase: "3 · Programa ACCIÓN™ · 12 semanas", titulo: "Las 6 etapas completas", desc: "Tu foco será la etapa I: instalar protocolos que funcionan aunque tengas miedo, con registro semanal." }
+  ],
+  identidad: [
+    { fase: "1 · Esta semana", titulo: "Tu Historia Revisada", desc: "Tres momentos donde ya actuaste desde tu valor sin darte crédito. Identidad retrospectiva, no aspiracional." },
+    { fase: "2 · Sesión de Diagnóstico · $199", titulo: "90 minutos con Lorena", desc: "Diagnóstico en profundidad + inicio de tu Contrato de Identidad™ con comportamientos observables.", cta: true },
+    { fase: "3 · Programa ACCIÓN™ · 12 semanas", titulo: "Las 6 etapas completas", desc: "Tu foco será la etapa C2 — la más profunda del método y exactamente la que tu arquetipo necesita." }
+  ],
+  cultura: [
+    { fase: "1 · Esta semana", titulo: "Tu Inventario de Mandatos inicia", desc: "Las tres frases sobre dinero y mujeres que escuchaste de niña, por escrito. Nombrar la instrucción es el primer paso." },
+    { fase: "2 · Sesión de Diagnóstico · $199", titulo: "90 minutos con Lorena", desc: "Inventario de Mandatos Culturales™ completo + tu Mapa de Resistencia del entorno.", cta: true },
+    { fase: "3 · Programa ACCIÓN™ · 12 semanas", titulo: "Las 6 etapas completas", desc: "Tu proceso incluye resignificación cultural y el diseño de respuestas ante las fuerzas de retroceso de tu entorno." }
+  ],
+  recursos: [
+    { fase: "1 · Claridad", titulo: "Nombra el recurso exacto que falta", desc: "Tiempo, capital, información o habilidad técnica. Tu bloqueo se resuelve resolviendo eso — no con trabajo emocional." },
+    { fase: "2 · Honestidad del método", titulo: "El Método ACCIÓN™ no es lo que necesitas ahora", desc: "Y decírtelo es parte de la integridad del método. Venderte coaching de identidad sería ineficiente para ti." },
+    { fase: "3 · La puerta queda abierta", titulo: "Cuando el recurso esté resuelto", desc: "Si al resolverlo aparece un freno interno — ahí sí, vuelve a hacer este test. El método estará aquí." }
+  ]
+};
+
+const PREGUNTAS = [
+  { a: "capacidad", t: "Siento que necesito un curso, certificación o experiencia más antes de dar el siguiente paso importante." },
+  { a: "capacidad", t: "Veo a otras personas con menos preparación que yo lograr cosas que yo todavía no me atrevo a intentar." },
+  { a: "capacidad", t: "Cuando pienso en cobrar más o asumir algo grande, mi primera reacción es \"todavía no estoy lista\"." },
+  { a: "capacidad", t: "Comparo mi nivel actual con un estándar que siempre parece estar un poco más adelante." },
+  { a: "capacidad", t: "Acumulo conocimiento y preparación, pero eso no se traduce en acciones más grandes." },
+  { a: "emocion", t: "Sé exactamente qué tengo que hacer y cómo — pero cuando llega el momento, algo me paraliza." },
+  { a: "emocion", t: "Postergo o cancelo justo las acciones que más quiero hacer, aunque las tenga planificadas." },
+  { a: "emocion", t: "La anticipación del malestar (vergüenza, rechazo, fracaso) me detiene antes de empezar." },
+  { a: "emocion", t: "Puedo explicar perfectamente mi situación y mi plan — pero la ejecución no llega." },
+  { a: "emocion", t: "Espero \"sentirme lista\" o \"más segura\" antes de actuar, y ese momento casi nunca llega." },
+  { a: "identidad", t: "Cuando me presento como experta o cobro un precio alto, siento que estoy actuando un papel." },
+  { a: "identidad", t: "Temo que en cualquier momento alguien descubra que \"no soy realmente esa persona\"." },
+  { a: "identidad", t: "Puedo hacer el trabajo con excelencia, pero por dentro me siento fraudulenta al cobrarlo o mostrarlo." },
+  { a: "identidad", t: "Me cuesta verme a mí misma como \"alguien que hace eso\" (liderar, cobrar alto, exponerse)." },
+  { a: "identidad", t: "Mis logros no cambian cómo me veo — los atribuyo a suerte, esfuerzo extremo o ayuda de otros." },
+  { a: "cultura", t: "Cuando gano bien, me expongo o pongo límites, aparece una culpa que no sé explicar." },
+  { a: "cultura", t: "Siento que destacar o cobrar bien es de alguna forma \"traicionar\" a mi familia o mis raíces." },
+  { a: "cultura", t: "En mi familia o cultura, las mujeres \"no hacen\" lo que yo quiero hacer (negociar, liderar, brillar)." },
+  { a: "cultura", t: "La incomodidad aparece DESPUÉS del logro — el éxito me genera vergüenza más que orgullo." },
+  { a: "cultura", t: "Personas cercanas reaccionan mal o me frenan cuando avanzo, y eso me hace retroceder." },
+  { a: "recursos", t: "Lo que me falta es concreto y tangible: tiempo, dinero, información o herramientas — no ánimo." },
+  { a: "recursos", t: "Cuando he tenido los recursos necesarios, he actuado sin problema y sin freno interno." },
+  { a: "recursos", t: "Mi situación de vida actual (carga familiar, economía, salud) hace genuinamente inviable actuar ahora." },
+  { a: "recursos", t: "No siento miedo ni culpa al pensar en actuar — siento que simplemente no tengo con qué." },
+  { a: "recursos", t: "Si mañana tuviera el recurso específico que me falta, empezaría ese mismo día." }
+];
+
+const ESCALA = [
+  { v: 1, l: "Nada que ver conmigo" },
+  { v: 2, l: "Rara vez" },
+  { v: 3, l: "A veces" },
+  { v: 4, l: "Frecuentemente" },
+  { v: 5, l: "Me describe exactamente" }
+];
+
+// ═══════════ LÓGICA ═══════════
+let idx = 0;
+let respuestas = {};
+
+function mostrar(id) {
+  ["t-intro", "t-preguntas", "t-datos", "t-resultado"].forEach(v => {
+    document.getElementById(v).classList.toggle("test-hidden", v !== id);
+  });
+  document.getElementById("test").scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+function iniciarTest() {
+  idx = 0; respuestas = {};
+  mostrar("t-preguntas");
+  renderPregunta();
+}
+
+function renderPregunta() {
+  const p = PREGUNTAS[idx];
+  document.getElementById("t-progress").style.width = (idx / PREGUNTAS.length * 100) + "%";
+  document.getElementById("t-count").textContent = "Pregunta " + (idx + 1) + " de " + PREGUNTAS.length;
+  document.getElementById("t-texto").textContent = '"' + p.t + '"';
+  const cont = document.getElementById("t-opciones");
+  cont.innerHTML = "";
+  ESCALA.forEach(e => {
+    const b = document.createElement("button");
+    b.className = "q-opt";
+    b.innerHTML = '<span class="num">' + e.v + '</span><span>' + e.l + '</span>';
+    b.onclick = () => responder(e.v);
+    cont.appendChild(b);
+  });
+}
+
+function responder(v) {
+  respuestas[idx] = v;
+  if (idx < PREGUNTAS.length - 1) { idx++; renderPregunta(); }
+  else { mostrar("t-datos"); }
+}
+
+function anterior() {
+  if (idx > 0) { idx--; renderPregunta(); }
+  else { mostrar("t-intro"); }
+}
+
+function verResultado() {
+  const nombre = document.getElementById("t-nombre").value.trim();
+  const email = document.getElementById("t-email").value.trim();
+  if (nombre.length < 2 || !/\S+@\S+\.\S+/.test(email)) {
+    alert("Por favor completa tu nombre y un correo válido para recibir tu resultado.");
+    return;
+  }
+
+  // ── CONEXIÓN MAILCHIMP ──
+  // Reemplazar la URL de abajo con la "form action URL" de tu formulario embebido de Mailchimp.
+  // En Mailchimp: Audience → Signup forms → Embedded forms → copiar la URL del atributo action.
+  const MAILCHIMP_URL = ""; // ej: "https://xxxxx.usX.list-manage.com/subscribe/post?u=XXXX&id=XXXX"
+  const scores = { capacidad: 0, emocion: 0, identidad: 0, cultura: 0, recursos: 0 };
+  PREGUNTAS.forEach((p, i) => { scores[p.a] += respuestas[i] || 0; });
+  const orden = Object.entries(scores).sort((a, b) => b[1] - a[1]);
+  const dom = orden[0][0], sec = orden[1][0];
+
+  if (MAILCHIMP_URL) {
+    const fd = new FormData();
+    fd.append("EMAIL", email);
+    fd.append("FNAME", nombre);
+    fd.append("ARQUETIPO", ARQ[dom].nombre); // crear campo ARQUETIPO en Mailchimp para segmentar
+    fetch(MAILCHIMP_URL, { method: "POST", body: fd, mode: "no-cors" }).catch(() => {});
+  }
+
+  renderResultado(dom, sec, scores, nombre);
+  mostrar("t-resultado");
+}
+
+// ═══════════ JUEGO: LA SEMANA DECISIVA ═══════════
+const J_ESPEJOS = {
+  capacidad: {
+    emoji: "📚",
+    espejo: "Tu semana te delató: cada vez que la vida te abrió una puerta, tu primera respuesta fue \"todavía no estoy lista\". El lunes pediste más certificaciones. El jueves guardaste el video hasta \"prepararte mejor\". El sábado te prometiste — otra vez — que falta poco.",
+    verdad: "Aquí está la verdad que tu semana revela: tienes MÁS preparación que la mayoría en tu campo. Tu problema no es de conocimiento — es que tu sistema interno no registra la evidencia de lo que ya puedes. Por eso el estándar siempre se mueve un paso más allá. Un curso más nunca será suficiente, porque el vacío no está en tu currículum: está en tu registro interno."
+  },
+  emocion: {
+    emoji: "🌊",
+    espejo: "Tu semana te delató: tú SABÍAS qué hacer en cada escena. El lunes ibas a responder \"mañana\". El jueves el video se quedó en borradores tres días. El viernes escribiste la frase del cobro... y la borraste. Tu mente tenía el plan. Tu cuerpo dijo no.",
+    verdad: "Aquí está la verdad que tu semana revela: tu sistema nervioso no distingue entre el miedo al tigre y el miedo a exponerte. La anticipación del malestar gana la carrera contra tu lógica — siempre. Por eso más información nunca funcionó: el bloqueo no vive en tu mente, vive más abajo. La solución no es eliminar el malestar — es actuar con él presente, con un protocolo que no dependa de cómo amaneces."
+  },
+  identidad: {
+    emoji: "🎭",
+    espejo: "Tu semana te delató: el lunes pensaste que el correo era un error. El martes sobre-explicaste tu precio como disculpándote. El miércoles te preguntaste \"¿quién soy yo para pararme ahí?\" — con años de experiencia encima. La capacidad nunca estuvo en duda. Tu identidad sí.",
+    verdad: "Aquí está la verdad que tu semana revela: puedes hacer el trabajo con excelencia — y sentirte fraudulenta haciéndolo. Eso no es humildad: es que tu autoimagen no se ha actualizado con tu realidad. Mientras \"la mujer que cobra eso\" no exista en tu identidad, cada logro se sentirá prestado. Las afirmaciones no lo arreglan — la identidad no se declara: se cimenta con la evidencia de lo que YA hiciste."
+  },
+  cultura: {
+    emoji: "🧬",
+    espejo: "Tu semana te delató: el martes la culpa llegó DESPUÉS de cobrar bien — esa es la firma. El miércoles escuchaste \"no seas protagonista\". El viernes, la voz de tu mamá: \"a la gente se le ayuda\". El sábado: \"¿quién soy yo para querer tanto?\" Esas voces tienen dueños — y ninguno eres tú.",
+    verdad: "Aquí está la verdad que tu semana revela: te instalaron instrucciones sobre las mujeres, el dinero y el espacio que \"mereces\" ocupar — sin pedirte permiso. Por eso el éxito te genera vergüenza en vez de orgullo. No es un defecto tuyo: es un mandato aprendido. Y los mandatos no se desactivan con reprogramación individual — se desactivan nombrándolos, devolviéndoles su dueño, y escribiendo la instrucción nueva: la tuya."
+  },
+  recursos: {
+    emoji: "🧩",
+    espejo: "Tu semana te delató — pero de una forma distinta a las demás: en cada escena, lo que faltó fue algo CONCRETO. Tiempo el miércoles. Horas el jueves. Estructura para cobrar el viernes. No apareció miedo, ni culpa, ni voz interna — apareció una agenda imposible y recursos que no están.",
+    verdad: "Y aquí va la honestidad que pocos te dirán: tu problema probablemente NO es psicológico. Cuando has tenido los recursos, has actuado. El trabajo de identidad no es lo que necesitas ahora — y venderte eso sería deshonesto. Lo que necesitas es resolver el déficit concreto: tiempo, capital, información o estructura. Si al resolverlo aparece un freno interno — entonces sí, el método estará aquí para ti."
+  }
+};
+
+const J_DIAS = [
+  { dia: "Lunes", icono: "📩", titulo: "El correo que lo cambia todo",
+    historia: "Abres tu correo a las 7am, café en mano. Hay un mensaje de una empresa que admiras: \"Vimos tu trabajo y nos encantaría que presentes una propuesta para un proyecto grande. ¿Tienes disponibilidad esta semana?\" Es la oportunidad que llevas meses esperando. Sientes el corazón acelerarse.",
+    pregunta: "¿Qué es lo PRIMERO que pasa por tu mente?",
+    opciones: [
+      { t: "\"¿Yo? Seguro hay gente mucho más preparada. Necesito al menos terminar la certificación que estoy haciendo antes de algo así.\"", p: { capacidad: 3 } },
+      { t: "\"Qué emoción... pero ya siento el nudo en el estómago. Voy a responder mañana, hoy tengo mucho que hacer.\" (Y mañana se vuelve pasado mañana.)", p: { emocion: 3 } },
+      { t: "\"Esto es un error. Cuando vean mi propuesta de cerca se van a dar cuenta de que no soy del nivel que creen.\"", p: { identidad: 3 } },
+      { t: "\"¿Y si me va bien y esto crece? ¿Quién va a recoger a los niños, qué va a decir mi familia si empiezo a viajar?\"", p: { cultura: 3 } },
+      { t: "\"Quiero hacerlo — pero entre el trabajo y la casa, literalmente no tengo las horas para preparar una propuesta seria esta semana.\"", p: { recursos: 3 } },
+      { t: "Respondes en ese momento: \"¡Claro que sí! ¿Cuándo hablamos?\" — el miedo está ahí, pero respondes primero y lo procesas después.", p: {}, accion: true }
+    ] },
+  { dia: "Martes", icono: "💰", titulo: "La pregunta del precio",
+    historia: "Videollamada con una clienta potencial. Todo fluye — ella está encantada con lo que ofreces. Entonces llega LA pregunta: \"¿Y cuánto cobras?\" Tienes un precio en mente desde hace semanas: el que sabes que vale tu trabajo. Es 40% más de lo que cobrabas antes.",
+    pregunta: "¿Qué sale de tu boca?",
+    opciones: [
+      { t: "Dices el precio anterior, el de siempre. \"Cuando tenga más experiencia con clientes de este nivel, ahí sí subo.\"", p: { capacidad: 3 } },
+      { t: "Empiezas a decir el precio nuevo, sientes la cara caliente, y antes de terminar la frase ya agregaste: \"...pero podemos ajustarlo, ¿eh? Hay descuento si...\"", p: { emocion: 2, identidad: 1 } },
+      { t: "Dices el precio nuevo — y de inmediato sientes que estás estafando a alguien. Pasas el resto de la llamada sobre-explicando todo lo que incluye.", p: { identidad: 3 } },
+      { t: "Dices el precio nuevo, ella acepta... y esa noche no puedes dormir. Escuchas la voz: \"¿Quién te crees? Eso es ser interesada.\"", p: { cultura: 3 } },
+      { t: "No has podido ni definir bien tus precios — necesitas datos del mercado, una estructura de costos, información que no tienes.", p: { recursos: 3 } },
+      { t: "Dices el precio completo, haces una pausa, y te quedas en silencio. Incómodo, sí. Pero el silencio lo sostienes tú.", p: {}, accion: true }
+    ] },
+  { dia: "Miércoles", icono: "🎤", titulo: "El micrófono abierto",
+    historia: "Estás en un evento de networking. La organizadora anuncia: \"Tenemos 10 minutos — ¿alguien quiere presentar su proyecto al grupo?\" Hay unas 40 personas. Conoces tu proyecto de memoria. Literalmente podrías hacerlo dormida. El micrófono está a cinco pasos.",
+    pregunta: "¿Qué haces en esos 3 segundos?",
+    opciones: [
+      { t: "Piensas: \"La próxima vez, cuando tenga el pitch más pulido y mejores resultados que mostrar.\" Y aplaudes a la que sí pasó.", p: { capacidad: 3 } },
+      { t: "El corazón se te dispara, sientes calor en el pecho, y tu cuerpo simplemente... no se levanta. Sabías QUÉ decir. El cuerpo dijo no.", p: { emocion: 3 } },
+      { t: "Te imaginas ahí adelante y piensas: \"¿Quién soy yo para pararme ahí como si fuera una experta?\" — aunque llevas años en esto.", p: { identidad: 3 } },
+      { t: "Piensas en levantar la mano y de inmediato: \"No seas protagonista. Qué van a pensar. Las mujeres echadas pa'lante caen mal.\"", p: { cultura: 3 } },
+      { t: "No fuiste al evento — entre el trabajo y la casa no hubo manera. Te enteraste por las historias de Instagram.", p: { recursos: 3 } },
+      { t: "Las piernas te tiemblan, pero caminas los cinco pasos. Los primeros 20 segundos son horribles. Los siguientes nueve minutos, tuyos.", p: {}, accion: true }
+    ] },
+  { dia: "Jueves", icono: "📱", titulo: "El video que no publicas",
+    historia: "Grabaste un video hablando de tu trabajo. Lo has visto cuatro veces. Está bien — de verdad está bien. Tu dedo está sobre el botón de publicar. Sabes que mostrarte es exactamente lo que tu negocio necesita.",
+    pregunta: "¿Qué pasa con ese video?",
+    opciones: [
+      { t: "Lo guardas en borradores. \"Primero voy a hacer un curso de oratoria / comprar mejor luz / aprender edición.\" Hay 14 videos en esa carpeta.", p: { capacidad: 3 } },
+      { t: "Lo vas a publicar \"en la noche\". Luego \"mañana temprano\". A los tres días el video ya \"no está actual\" y lo borras. Alivio. Y vacío.", p: { emocion: 3 } },
+      { t: "Lo ves por quinta vez y piensas: \"¿Quién me voy a creer publicando esto como si fuera una autoridad?\" Lo borras.", p: { identidad: 3 } },
+      { t: "Piensas en tu familia viéndolo. En las primas. En el grupo de WhatsApp. \"Ya se cree influencer.\" El video se queda en el teléfono.", p: { cultura: 3 } },
+      { t: "¿Grabar? ¿Cuándo? Llevas tres semanas intentando encontrar UNA hora tranquila para grabar y no existe en tu agenda.", p: { recursos: 3 } },
+      { t: "Lo publicas con las manos frías y cierras la app. Una hora después miras: a la gente le sirvió. Siempre les sirve.", p: {}, accion: true }
+    ] },
+  { dia: "Viernes", icono: "🚪", titulo: "El favor que no puedes seguir haciendo",
+    historia: "Una conocida te escribe — otra vez — pidiéndote \"una asesoría rapidita, es que tú sabes de esto.\" Es la cuarta vez. Cada \"ratito\" son dos horas de tu conocimiento profesional. Gratis. Tienes la frase lista en tu mente: \"Con gusto te ayudo — este es el costo de mi sesión.\"",
+    pregunta: "¿Qué le respondes?",
+    opciones: [
+      { t: "Le ayudas gratis otra vez. \"Tampoco es que yo sea una consultora oficial todavía... cuando lo sea, ahí sí cobro.\"", p: { capacidad: 3 } },
+      { t: "Escribes la frase del cobro. La lees. La borras. Escribes \"jaja claro, dime\". El malestar de decir que no es peor que las dos horas perdidas.", p: { emocion: 3 } },
+      { t: "Piensas: \"¿Cobrarle? ¿Y si me dice que ni que fuera tan experta?\" Le ayudas gratis para no ser descubierta.", p: { identidad: 2, emocion: 1 } },
+      { t: "Escuchas a tu mamá en tu cabeza: \"A la gente se le ayuda, no seas egoísta.\" Cobrar a una conocida se siente como traición. Ayudas gratis.", p: { cultura: 3 } },
+      { t: "Le ayudas porque honestamente ni sabrías cómo cobrar — no tienes ni cuenta de empresa, ni tarifa definida, ni forma de facturar.", p: { recursos: 3 } },
+      { t: "Le mandas la frase con cariño y tu link de pago. Ella dice \"uy, déjame ver\". Quizás no compra. Pero el límite quedó puesto.", p: {}, accion: true }
+    ] },
+  { dia: "Sábado", icono: "🪞", titulo: "La conversación en el espejo",
+    historia: "Sábado en la noche, después de una semana intensa. Te lavas la cara y te miras al espejo. Piensas en todo lo que quieres construir — y en la distancia entre donde estás y donde sabes que podrías estar. Es un momento honesto, de esos que solo pasan contigo misma.",
+    pregunta: "¿Cuál de estas frases se parece más a lo que te dices?",
+    opciones: [
+      { t: "\"Me falta poco. Un curso más, un poco más de experiencia, y ahí sí voy con todo.\" (Llevas tres años diciéndolo.)", p: { capacidad: 3 } },
+      { t: "\"Yo sé exactamente qué tengo que hacer. Lo tengo clarísimo. ¿Por qué no lo HAGO? ¿Qué me pasa?\"", p: { emocion: 3 } },
+      { t: "\"El día que la gente me conozca de cerca se va a dar cuenta de que no soy tan capaz como parezco.\"", p: { identidad: 3 } },
+      { t: "\"¿Y quién soy yo para querer tanto? Mi mamá nunca tuvo nada de esto y nunca se quejó.\"", p: { cultura: 3 } },
+      { t: "\"Si tuviera el tiempo y el dinero que otras tienen, ya estaría allá. No es mi mente — son mis circunstancias.\"", p: { recursos: 3 } },
+      { t: "\"Esta semana hice cosas que el año pasado no me atrevía. Falta camino — pero ya no soy la que espera permiso.\"", p: {}, accion: true }
+    ] },
+  { dia: "Domingo", icono: "✨", titulo: "La carta de tu yo del futuro",
+    historia: "Domingo en la tarde. Imagina que te llega una carta de ti misma, escrita dentro de cinco años. La versión de ti que SÍ construyó todo lo que hoy sueñas. La carta dice: \"Lo logramos. Y solo tuviste que cambiar una cosa.\" Antes de voltear la hoja, tú ya sabes cuál es esa cosa.",
+    pregunta: "Sé honesta: ¿qué dice la carta que tuviste que cambiar?",
+    opciones: [
+      { t: "\"Dejaste de prepararte para la vida que querías — y empezaste a vivirla sin sentirte lista.\"", p: { capacidad: 3 } },
+      { t: "\"Dejaste de esperar a que el miedo se fuera — y aprendiste a actuar con él al lado.\"", p: { emocion: 3 } },
+      { t: "\"Dejaste de sentirte un fraude — y te diste cuenta de que ya eras ella desde antes.\"", p: { identidad: 3 } },
+      { t: "\"Te diste el permiso que nadie en tu familia te iba a dar — porque no lo tenían para darse a sí mismas.\"", p: { cultura: 3 } },
+      { t: "\"Resolviste lo concreto que te faltaba — y descubriste que sin eso resuelto, nada interno iba a alcanzar.\"", p: { recursos: 3 } },
+      { t: "\"Nada. Solo seguiste haciendo lo que ya empezaste a hacer: actuar primero, sentirte lista después.\"", p: {}, accion: true }
+    ] }
+];
+
+let jIdx = 0;
+let jPuntos = { capacidad: 0, emocion: 0, identidad: 0, cultura: 0, recursos: 0 };
+let jAcciones = 0;
+
+function jMostrar(id) {
+  ["j-portada", "j-escena", "j-revelacion"].forEach(v => {
+    document.getElementById(v).classList.toggle("j-hidden", v !== id);
+  });
+  document.getElementById("juego").scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+function jIniciar() {
+  jIdx = 0;
+  jPuntos = { capacidad: 0, emocion: 0, identidad: 0, cultura: 0, recursos: 0 };
+  jAcciones = 0;
+  jMostrar("j-escena");
+  jRender();
+}
+
+function jRender() {
+  const e = J_DIAS[jIdx];
+  let dias = "";
+  J_DIAS.forEach((d, i) => {
+    const cls = i === jIdx ? "j-dia activo" : i < jIdx ? "j-dia pasado" : "j-dia";
+    dias += '<div class="' + cls + '">' + d.dia.slice(0, 3) + '</div>';
+  });
+  document.getElementById("j-dias").innerHTML = dias;
+  document.getElementById("j-icono").textContent = e.icono;
+  document.getElementById("j-fase").textContent = e.dia + " · Día " + (jIdx + 1) + " de 7";
+  document.getElementById("j-titulo").textContent = e.titulo;
+  document.getElementById("j-historia").textContent = e.historia;
+  document.getElementById("j-pregunta").textContent = e.pregunta;
+  const cont = document.getElementById("j-opciones");
+  cont.innerHTML = "";
+  // mezclar orden de opciones para que la opción de acción no esté siempre al final
+  const ops = e.opciones.map((o, i) => ({ o, r: Math.random() })).sort((a, b) => a.r - b.r).map(x => x.o);
+  ops.forEach(op => {
+    const b = document.createElement("button");
+    b.className = "j-opt";
+    b.textContent = op.t;
+    b.onclick = () => jElegir(op);
+    cont.appendChild(b);
+  });
+}
+
+function jElegir(op) {
+  Object.entries(op.p || {}).forEach(([k, v]) => { jPuntos[k] += v; });
+  if (op.accion) jAcciones++;
+  if (jIdx < J_DIAS.length - 1) { jIdx++; jRender(); jMostrar("j-escena"); }
+  else { jRevelar(); }
+}
+
+function jRevelar() {
+  const cont = document.getElementById("j-revelacion");
+
+  // Caso: ya está actuando (5+ acciones de 7)
+  if (jAcciones >= 5) {
+    cont.innerHTML =
+      '<div class="j-rev-hero"><div class="j-rev-emoji">🔥</div>' +
+      '<div class="mono" style="font-size:10px; letter-spacing:3px; text-transform:uppercase; color:var(--gold); margin-bottom:18px;">Tu semana habló</div>' +
+      '<div class="j-rev-nombre serif">La Mujer que Ya Cruzó</div>' +
+      '<div class="j-rev-causa">Elegiste actuar en ' + jAcciones + ' de 7 escenas</div></div>' +
+      '<div style="padding-top:36px;">' +
+      '<p>Con miedo, con manos frías, con piernas temblando — pero actuaste. Eso tiene un nombre en el método: ya no vives en la Brecha del Valor.</p>' +
+      '<p>Tu siguiente nivel no es desbloquearte — es construir el sistema que sostiene y escala lo que ya haces: evidencia documentada, protocolos para los días difíciles, y territorio nuevo. Eso es la segunda mitad del Método ACCIÓN™.</p>' +
+      '<div style="text-align:center; margin-top:28px;"><a href="https://ig.me/m/lorenalaverdeofficial" class="btn-primary">Escribe ACCIÓN al DM →</a></div>' +
+      '<div style="text-align:center;"><button class="q-back" onclick="jIniciar()">↺ Vivir la semana de nuevo</button></div></div>';
+    jMostrar("j-revelacion");
+    return;
+  }
+
+  const orden = Object.entries(jPuntos).sort((a, b) => b[1] - a[1]);
+  const dom = orden[0][0], sec = orden[1][0];
+  const a = ARQ[dom];
+  const esp = J_ESPEJOS[dom];
+
+  const cta = dom !== "recursos"
+    ? '<div class="res-dm-cta"><div class="serif" style="font-size:23px; color:var(--cream); margin-bottom:10px;">El juego te mostró el patrón.<br>La sesión te da el plan.</div><p style="font-size:13.5px; color:rgba(245,239,224,0.6); max-width:420px; margin:0 auto 22px; line-height:1.8;">En 90 minutos confirmamos tu diagnóstico en profundidad y construyes — con Lorena — tu protocolo personalizado para desactivar exactamente este bloqueo.</p><a href="https://ig.me/m/lorenalaverdeofficial" class="btn-primary" style="display:inline-block;">Escribe DIAGNÓSTICO al DM →</a></div>'
+    : '<div style="background:var(--cream-dark); border:1px solid rgba(61,35,20,0.12); padding:28px; text-align:center; margin-top:28px;"><p style="font-size:14px; color:var(--espresso-light); margin:0;">Y por eso mismo, con honestidad: el programa completo no es lo que necesitas ahora. Resuelve primero el recurso concreto. Cuando lo logres — si aparece un freno interno — vuelve a vivir esta semana. La puerta queda abierta. 🧡</p></div>';
+
+  cont.innerHTML =
+    '<div class="j-rev-hero"><div class="j-rev-emoji">' + esp.emoji + '</div>' +
+    '<div class="mono" style="font-size:10px; letter-spacing:3px; text-transform:uppercase; color:var(--gold); margin-bottom:18px;">Domingo en la noche · Tu semana habló</div>' +
+    '<div class="j-rev-nombre serif">' + a.nombre + '</div>' +
+    '<div class="j-rev-causa">' + a.sub + ' · ' + a.causa + '</div></div>' +
+    '<div style="padding-top:8px;">' +
+    '<div class="j-espejo-label">El espejo de tu semana</div>' +
+    '<p>' + esp.espejo + '</p>' +
+    '<div class="res-box-dark"><p>' + esp.verdad + '</p></div>' +
+    '<p style="font-size:13px; color:var(--espresso-light);">Tu patrón secundario asoma como <strong>' + ARQ[sec].nombre + '</strong> — también lo veremos, pero el trabajo empieza siempre por el dominante.</p>' +
+    '<div class="res-box-gold"><div class="label">Tu primer paso — esta semana, la de verdad</div><p>' + a.primerPaso + '</p></div>' +
+    cta +
+    '<div style="text-align:center;"><button class="q-back" onclick="jIniciar()">↺ Vivir la semana de nuevo</button>' +
+    '<button class="q-back" onclick="document.getElementById(\'test\').scrollIntoView({behavior:\'smooth\'})" style="margin-left:20px;">Confirmar con el test completo →</button></div></div>';
+  jMostrar("j-revelacion");
+}
+
+function renderResultado(dom, sec, scores, nombre) {
+  const a = ARQ[dom];
+  const ruta = RUTAS[dom];
+  const colores = { 0: "var(--terracota)", 1: "var(--gold)" };
+
+  let barras = "";
+  Object.entries(scores).sort((x, y) => y[1] - x[1]).forEach(([k, v], i) => {
+    const color = i === 0 ? "var(--terracota)" : i === 1 ? "var(--gold)" : "var(--sage)";
+    const op = i === 0 ? 1 : 0.55;
+    barras += '<div class="score-row"><div class="score-head"><span style="font-weight:' + (i === 0 ? 600 : 300) + ';">' + ARQ[k].nombre + '</span><span class="mono" style="font-size:11px; color:var(--terracota);">' + v + '/25</span></div><div class="score-track"><div class="score-fill" style="width:' + (v / 25 * 100) + '%; background:' + color + '; opacity:' + op + ';"></div></div></div>';
+  });
+
+  let pasos = "";
+  ruta.forEach((r, i) => {
+    pasos += '<div class="ruta-step' + (r.cta ? " cta-step" : "") + '"><div class="ruta-num">' + (i + 1) + '</div><div class="ruta-body"><div class="ruta-fase">' + r.fase + '</div><div class="ruta-title">' + r.titulo + '</div><p class="ruta-desc">' + r.desc + '</p></div></div>';
+  });
+
+  let tools = "";
+  a.herramientas.forEach(h => { tools += '<span class="tool">' + h + '</span>'; });
+
+  const ctaFinal = dom !== "recursos"
+    ? '<div class="res-dm-cta"><div class="serif" style="font-size:24px; color:var(--cream); margin-bottom:10px;">Tu siguiente paso está a un mensaje de distancia</div><p style="font-size:13.5px; color:rgba(245,239,224,0.6); max-width:420px; margin:0 auto 24px; line-height:1.8;">Escribe la palabra <strong style="color:var(--gold);">DIAGNÓSTICO</strong> al DM de Instagram y cuéntame tu resultado. Yo personalmente te respondo.</p><a href="https://ig.me/m/lorenalaverdeofficial" class="btn-primary" style="display:inline-block;">Escribir a Lorena →</a></div>'
+    : "";
+
+  document.getElementById("t-resultado").innerHTML =
+    '<div class="res-hero"><div class="mono" style="font-size:10px; letter-spacing:3px; text-transform:uppercase; color:var(--gold); margin-bottom:20px;">' + (nombre ? nombre + " — tu" : "Tu") + ' arquetipo de bloqueo dominante</div>' +
+    '<div class="res-name serif">' + a.nombre + '</div>' +
+    '<div class="res-cause">' + a.sub + ' · ' + a.causa + '</div>' +
+    '<div class="res-voice serif">"' + a.voz + '"</div></div>' +
+    '<div style="padding:48px 0 0;">' +
+    '<div class="eyebrow">Tu perfil completo de bloqueo</div>' + barras +
+    '<p style="font-size:13px; color:var(--espresso-light); margin-top:18px;">Tu bloqueo secundario es <strong>' + ARQ[sec].nombre + '</strong> — lo trabajaremos también, pero la intervención empieza siempre por el dominante.</p>' +
+    '<h3 class="serif" style="font-size:25px; font-weight:600; margin:44px 0 12px;">Por qué te pasa esto</h3>' +
+    '<p style="font-size:14.5px;">' + a.mecanismo + '</p>' +
+    '<div class="res-box-dark"><div class="label">Por qué no ha funcionado lo que has intentado</div><p>' + a.noFunciona + '</p></div>' +
+    '<h3 class="serif" style="font-size:25px; font-weight:600; margin:44px 0 8px;">Tus herramientas del método</h3>' +
+    '<div class="mono" style="font-size:10px; letter-spacing:1.5px; text-transform:uppercase; color:var(--terracota); margin-bottom:14px;">Etapa prioritaria: ' + a.etapa + '</div>' +
+    '<div class="tools">' + tools + '</div>' +
+    '<div class="res-box-gold"><div class="label">Tu primer paso — esta semana</div><p>' + a.primerPaso + '</p></div>' +
+    '<h3 class="serif" style="font-size:25px; font-weight:600; margin:44px 0 20px;">Tu ruta a seguir</h3>' + pasos + ctaFinal +
+    '<div style="text-align:center; margin-top:28px;"><button class="q-back" onclick="iniciarTest()">↺ Hacer el test de nuevo</button></div>' +
+    '</div>';
+}
+</script>
+
+</body>
+</html>
