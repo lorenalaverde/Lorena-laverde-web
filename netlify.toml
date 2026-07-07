@@ -1,0 +1,56 @@
+# Lorena Laverde · Firma Consultora — configuración Netlify
+[build]
+  publish = "."
+
+# ── Redirects ──
+# URLs antiguas (compatibilidad con la versión anterior del sitio)
+[[redirects]]
+  from = "/metodo-accion.html"
+  to = "/metodo/metodo-accion.html"
+  status = 301
+
+[[redirects]]
+  from = "/metodo-accion"
+  to = "/metodo/metodo-accion.html"
+  status = 301
+
+# URL corta amigable
+[[redirects]]
+  from = "/metodo"
+  to = "/metodo/metodo-accion.html"
+  status = 301
+
+# Link corto para compartir la guía
+[[redirects]]
+  from = "/guia"
+  to = "/downloads/Guia_5_Senales_LorenaLaverde.pdf"
+  status = 301
+
+# ── Headers de seguridad y caché ──
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/downloads/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
