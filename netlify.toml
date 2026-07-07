@@ -1,6 +1,6 @@
 # Lorena Laverde · Firma Consultora — configuración Netlify
 [build]
-  publish = "."
+  publish = "lorena-laverde-web"
 
 # ── Redirects ──
 # URLs antiguas (compatibilidad con la versión anterior del sitio)
