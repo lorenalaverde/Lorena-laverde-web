@@ -29,14 +29,10 @@
   .btn:hover{background:var(--espresso);}
   .btn.full{width:100%;text-align:center;}
   .hidden{display:none;}
-
-  /* INTRO */
   #intro h1{font-size:clamp(26px,5vw,34px);margin:14px 0 16px;}
   #intro p{margin-bottom:14px;font-size:15px;color:#4a4a4a;}
   .intro-datos{display:flex;gap:18px;margin:22px 0 26px;flex-wrap:wrap;}
   .dato{background:var(--crema);border-radius:10px;padding:10px 16px;font-size:12px;font-weight:600;color:var(--espresso);}
-
-  /* QUIZ */
   .progress{height:8px;background:#E8DDD0;border-radius:4px;margin-bottom:8px;overflow:hidden;}
   .progress div{height:100%;background:var(--terracota);width:0%;transition:width .3s;border-radius:4px;}
   .q-count{font-size:11px;color:#999;margin-bottom:18px;}
@@ -44,15 +40,11 @@
   .q-text{font-family:'Playfair Display',serif;font-style:italic;font-weight:700;font-size:21px;color:var(--espresso);margin-bottom:22px;line-height:1.35;}
   .opt{display:block;width:100%;text-align:left;background:var(--crema);border:2px solid transparent;border-radius:10px;padding:15px 18px;margin-bottom:11px;font-size:14.5px;font-family:'Montserrat',sans-serif;cursor:pointer;transition:all .15s;color:var(--carbon);}
   .opt:hover{border-color:var(--terracota);background:#FBF6EC;}
-
-  /* FORM */
   #gate h2{font-size:24px;margin-bottom:10px;}
   #gate p{font-size:14px;color:#555;margin-bottom:22px;}
   #gate input{width:100%;padding:14px 16px;margin-bottom:12px;border:1.5px solid var(--arena);border-radius:8px;font-family:'Montserrat',sans-serif;font-size:15px;background:var(--crema);}
   #gate input:focus{outline:none;border-color:var(--terracota);}
   .privacidad{font-size:11px;color:#999;margin-top:12px;text-align:center;}
-
-  /* RESULTADO */
   .score-ring{text-align:center;margin:6px 0 18px;}
   .score-num{font-family:'Playfair Display',serif;font-style:italic;font-weight:700;font-size:64px;color:var(--terracota);line-height:1;}
   .score-lbl{font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:#999;}
@@ -74,15 +66,11 @@
 </style>
 </head>
 <body>
-
 <nav>
   <a class="logo" href="index.html">Lorena Laverde</a>
   <a class="back" href="index.html">← Volver al sitio</a>
 </nav>
-
 <div class="wrap">
-
-  <!-- INTRO -->
   <div class="card" id="intro">
     <div class="mono">Test de Diagnóstico Rentable™ · Gratuito</div>
     <h1>¿Cuánto dinero está dejando ir tu negocio?</h1>
@@ -95,8 +83,6 @@
     </div>
     <button class="btn full" onclick="empezar()">Empezar mi diagnóstico →</button>
   </div>
-
-  <!-- QUIZ -->
   <div class="card hidden" id="quiz">
     <div class="progress"><div id="bar"></div></div>
     <div class="q-count" id="qcount"></div>
@@ -104,8 +90,6 @@
     <div class="q-text" id="qtext"></div>
     <div id="qopts"></div>
   </div>
-
-  <!-- GATE -->
   <div class="card hidden" id="gate">
     <div class="mono">Tu diagnóstico está listo</div>
     <h2>¿A nombre de quién preparo tu resultado?</h2>
@@ -116,8 +100,6 @@
     <button class="btn full" onclick="verResultado()">Ver mi resultado →</button>
     <p class="privacidad">Tu información solo se usa para entregarte tu diagnóstico. Sin spam.</p>
   </div>
-
-  <!-- RESULTADO -->
   <div class="card hidden" id="resultado">
     <div class="mono" style="text-align:center;">Diagnóstico Rentable™ · Resultado</div>
     <div class="score-ring">
@@ -139,9 +121,7 @@
     </div>
     <p class="disclaimer">Este test es orientativo y no reemplaza un diagnóstico profesional completo. Los resultados de cualquier proceso dependen del punto de partida y la implementación de cada negocio. © 2026 Lorena Laverde · Método Rentable™</p>
   </div>
-
 </div>
-
 <script>
 const AREAS = ['Dependencia de ti','Dinero y precios','Ventas','Procesos','Estrategia'];
 const FUGAS = {
@@ -163,11 +143,9 @@ const PREGUNTAS = [
  {a:4, t:'¿Tienes un plan escrito de los próximos 90 días con metas medibles?', o:[['Sí, y lo reviso',2],['Tengo objetivos generales, no escritos',1],['No',0]]},
  {a:4, t:'Tu facturación en el último año…', o:[['Crece de forma sostenida',2],['Está estancada hace algunos meses',1],['Lleva más de un año igual o bajando',0]]}
 ];
-
 let idx = 0;
 let scores = [0,0,0,0,0];
 let respuestas = [];
-
 function empezar(){
   document.getElementById('intro').classList.add('hidden');
   document.getElementById('quiz').classList.remove('hidden');
@@ -203,21 +181,37 @@ function responder(area, pts, texto){
 function verResultado(){
   const nombre = document.getElementById('f-nombre').value.trim();
   const email = document.getElementById('f-email').value.trim();
+  const whatsapp = document.getElementById('f-whatsapp').value.trim();
   if(!nombre || !email || email.indexOf('@') < 0){
     alert('Escribe tu nombre y un correo válido para ver tu resultado.');
     return;
   }
   const total = scores.reduce(function(a,b){return a+b;},0);
-  // enviar lead a Formspree (en segundo plano)
+
+  // Enviar a Formspree (notificación por email a Lorena)
   const fd = new FormData();
   fd.append('origen','Test Diagnóstico Rentable');
   fd.append('nombre',nombre);
   fd.append('email',email);
-  fd.append('whatsapp',document.getElementById('f-whatsapp').value.trim());
+  fd.append('whatsapp',whatsapp);
   fd.append('puntaje',total+'/20');
   AREAS.forEach(function(a,i){ fd.append('área: '+a, scores[i]+'/4'); });
   fd.append('respuestas', respuestas.join(' | '));
   fetch('https://formspree.io/f/mqevjedk',{method:'POST',body:fd,headers:{'Accept':'application/json'}}).catch(function(){});
+
+  // Enviar a Make → Systeme.io (secuencia de emails automática)
+  fetch('https://hook.us2.make.com/ctgyvx1lydh9cqksopdse5bnx14vn1wy',{
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({
+      nombre: nombre,
+      email: email,
+      whatsapp: whatsapp,
+      puntaje: total+'/20',
+      origen: 'Test Diagnóstico Rentable'
+    })
+  }).catch(function(){});
+
   mostrarResultado(nombre,total);
 }
 function mostrarResultado(nombre,total){
@@ -238,11 +232,9 @@ function mostrarResultado(nombre,total){
   }
   document.getElementById('res-titulo').textContent = titulo;
   document.getElementById('res-texto').textContent = texto;
-  // fuga principal = área con menor puntaje
   let min = 0;
   scores.forEach(function(s,i){ if(s < scores[min]) min = i; });
   document.getElementById('res-fuga').innerHTML = '<strong>'+AREAS[min]+':</strong> '+FUGAS[AREAS[min]];
-  // barras por área
   const cont = document.getElementById('res-areas');
   AREAS.forEach(function(a,i){
     const pct = scores[i]/4*100;
