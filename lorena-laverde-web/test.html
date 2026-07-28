@@ -199,16 +199,15 @@ function verResultado(){
   fd.append('respuestas', respuestas.join(' | '));
   fetch('https://formspree.io/f/mqevjedk',{method:'POST',body:fd,headers:{'Accept':'application/json'}}).catch(function(){});
 
-  // Enviar a Make → Systeme.io (secuencia de emails automática)
-  fetch('https://hook.us2.make.com/ctgyvx1lydh9cqksopdse5bnx14vn1wy',{
+  // Agregar a MailerLite → secuencia de emails automática
+  fetch('/.netlify/functions/subscribe',{
     method:'POST',
     headers:{'Content-Type':'application/json'},
     body:JSON.stringify({
       nombre: nombre,
       email: email,
       whatsapp: whatsapp,
-      puntaje: total+'/20',
-      origen: 'Test Diagnóstico Rentable'
+      puntaje: total+'/20'
     })
   }).catch(function(){});
 
