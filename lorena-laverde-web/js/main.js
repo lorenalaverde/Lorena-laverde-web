@@ -4,6 +4,13 @@ document.addEventListener('DOMContentLoaded', function () {
             e.preventDefault();
             const f = e.target;
             const btn = f.querySelector('button'); btn.textContent = 'Enviando...'; btn.disabled = true;
+            const nombre = f.querySelector('[name="nombre"]').value;
+            const email = f.querySelector('[name="email"]').value;
+            fetch('/.netlify/functions/subscribe-guia', {
+              method: 'POST',
+              headers: {'Content-Type':'application/json'},
+              body: JSON.stringify({ nombre: nombre, email: email })
+            }).catch(function(){});
             try{
               await fetch(f.action, {method:'POST', body:new FormData(f), headers:{'Accept':'application/json'}});
               f.style.display = 'none';
