@@ -25,7 +25,13 @@
   from = "/test"
   to = "/test.html"
   status = 301
-
+  
+# Link corto de gracias (post-pago)
+[[redirects]]
+  from = "/gracias"
+  to = "/gracias.html"
+  status = 301
+  
 # Link corto para compartir la guía
 [[redirects]]
   from = "/guia"
