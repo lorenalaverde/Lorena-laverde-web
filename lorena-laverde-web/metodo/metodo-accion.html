@@ -709,25 +709,55 @@ function verResultado() {
     return;
   }
 
-  // ── CONEXIÓN MAILCHIMP ──
-  // Reemplazar la URL de abajo con la "form action URL" de tu formulario embebido de Mailchimp.
-  // En Mailchimp: Audience → Signup forms → Embedded forms → copiar la URL del atributo action.
-  const MAILCHIMP_URL = ""; // ej: "https://xxxxx.usX.list-manage.com/subscribe/post?u=XXXX&id=XXXX"
   const scores = { capacidad: 0, emocion: 0, identidad: 0, cultura: 0, recursos: 0 };
   PREGUNTAS.forEach((p, i) => { scores[p.a] += respuestas[i] || 0; });
   const orden = Object.entries(scores).sort((a, b) => b[1] - a[1]);
   const dom = orden[0][0], sec = orden[1][0];
 
-  if (MAILCHIMP_URL) {
-    const fd = new FormData();
-    fd.append("EMAIL", email);
-    fd.append("FNAME", nombre);
-    fd.append("ARQUETIPO", ARQ[dom].nombre); // crear campo ARQUETIPO en Mailchimp para segmentar
-    fetch(MAILCHIMP_URL, { method: "POST", body: fd, mode: "no-cors" }).catch(() => {});
-  }
+  enviarAMailerLite(nombre, email, ARQ[dom].nombre);
 
   renderResultado(dom, sec, scores, nombre);
   mostrar("t-resultado");
+}
+
+// ── CONEXIÓN MAILERLITE (Test de Bloqueo Neurocultural™) ──
+// Mismo mecanismo que ya usa el formulario de "Guía 5 Señales" en el home:
+// un formulario embebido real de MailerLite, enviado a un iframe oculto
+// para no interrumpir la experiencia del test. Grupo: "LEVÁNTATE - Lead Magnet".
+function enviarAMailerLite(nombre, email, arquetipo) {
+  try {
+    let frame = document.getElementById("ml-hidden-frame");
+    if (!frame) {
+      frame = document.createElement("iframe");
+      frame.id = "ml-hidden-frame";
+      frame.name = "ml-hidden-frame";
+      frame.style.display = "none";
+      document.body.appendChild(frame);
+    }
+    const form = document.createElement("form");
+    form.action = "https://assets.mailerlite.com/jsonp/2539461/forms/198267702899377772/subscribe";
+    form.method = "POST";
+    form.target = "ml-hidden-frame";
+    form.style.display = "none";
+
+    const campos = {
+      "fields[email]": email,
+      "fields[name]": nombre,
+      "fields[arquetipo_levantate]": arquetipo,
+      "ml-submit": "1",
+      "anticsrf": "true"
+    };
+    Object.entries(campos).forEach(([k, v]) => {
+      const input = document.createElement("input");
+      input.type = "hidden";
+      input.name = k;
+      input.value = v;
+      form.appendChild(input);
+    });
+    document.body.appendChild(form);
+    form.submit();
+    setTimeout(() => form.remove(), 1500);
+  } catch (e) { /* silencioso — nunca debe romper la experiencia del test */ }
 }
 
 // ═══════════ JUEGO: LA SEMANA DECISIVA ═══════════
