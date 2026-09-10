@@ -490,7 +490,7 @@ src="https://www.facebook.com/tr?id=2135381260666384&ev=PageView&noscript=1"
         <div class="oferta-title">Programa ACCIÓN™ — 12 Semanas</div>
         <div class="oferta-price">$397</div>
         <p class="oferta-desc"><strong>Precio de fundadoras.</strong> Las 6 etapas completas del método en formato grupal íntimo (máx. 15 mujeres). Sesiones semanales en vivo, comunidad privada, todas las herramientas, y un sistema de medición real de tu transformación de principio a fin.</p>
-        <a href="https://ig.me/m/lorenalaverdeofficial" class="oferta-cta">Escribe ACCIÓN al DM</a>
+        <a href="https://wa.me/17063327508?text=Hola%20Lorena%2C%20quiero%20informaci%C3%B3n%20del%20Programa%20ACCI%C3%93N%E2%84%A2%20(%24397%2C%2012%20semanas)." class="oferta-cta" target="_blank" rel="noopener">Escríbeme por WhatsApp</a>
       </div>
       <div class="oferta-card">
         <div class="oferta-tag">Para organizaciones</div>
@@ -543,6 +543,18 @@ src="https://www.facebook.com/tr?id=2135381260666384&ev=PageView&noscript=1"
 </footer>
 
 <script>
+// ═══════════ CONTACTO Y RECURSOS ═══════════
+const WHATSAPP_NUMBER = "17063327508";
+const EBOOK_URL = "https://claude.ai/code/artifact/4df4c197-b87b-4edd-96f2-58e93115a634";
+function waUrl(msg) { return "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(msg); }
+function ebookBlock() {
+  return '<div style="background:var(--cream-dark); border:1px solid rgba(61,35,20,0.12); padding:28px 26px; text-align:center; margin:28px 0;">' +
+    '<div class="mono" style="font-size:9px; letter-spacing:2px; text-transform:uppercase; color:var(--terracota); margin-bottom:10px;">Regalo · Método ACCIÓN™</div>' +
+    '<p style="font-size:14px; color:var(--espresso-light); margin:0 0 16px; max-width:440px; margin-left:auto; margin-right:auto;">Antes de cualquier otra cosa, descarga <strong>LEVÁNTATE</strong> — el ebook donde te explico, paso a paso, cómo se desactiva tu tipo de bloqueo.</p>' +
+    '<a href="' + EBOOK_URL + '" target="_blank" rel="noopener" class="btn-primary" style="display:inline-block;">Descargar mi ebook LEVÁNTATE →</a>' +
+  '</div>';
+}
+
 // ═══════════ DATOS DEL TEST ═══════════
 const ARQ = {
   capacidad: {
@@ -934,7 +946,8 @@ function jRevelar() {
       '<div style="padding-top:36px;">' +
       '<p>Con miedo, con manos frías, con piernas temblando — pero actuaste. Eso tiene un nombre en el método: ya no vives en la Brecha del Valor.</p>' +
       '<p>Tu siguiente nivel no es desbloquearte — es construir el sistema que sostiene y escala lo que ya haces: evidencia documentada, protocolos para los días difíciles, y territorio nuevo. Eso es la segunda mitad del Método ACCIÓN™.</p>' +
-      '<div style="text-align:center; margin-top:28px;"><a href="https://ig.me/m/lorenalaverdeofficial" class="btn-primary">Escribe ACCIÓN al DM →</a></div>' +
+      ebookBlock() +
+      '<div style="text-align:center; margin-top:28px;"><a href="' + waUrl("Hola Lorena, acabo de jugar La Semana Decisiva y actué en " + jAcciones + " de 7 escenas. Quiero agendar mi sesión de diagnóstico.") + '" target="_blank" rel="noopener" class="btn-primary">Escríbeme por WhatsApp →</a></div>' +
       '<div style="text-align:center;"><button class="q-back" onclick="jIniciar()">↺ Vivir la semana de nuevo</button></div></div>';
     jMostrar("j-revelacion");
     return;
@@ -946,8 +959,8 @@ function jRevelar() {
   const esp = J_ESPEJOS[dom];
 
   const cta = dom !== "recursos"
-    ? '<div class="res-dm-cta"><div class="serif" style="font-size:23px; color:var(--cream); margin-bottom:10px;">El juego te mostró el patrón.<br>La sesión te da el plan.</div><p style="font-size:13.5px; color:rgba(245,239,224,0.6); max-width:420px; margin:0 auto 22px; line-height:1.8;">En 90 minutos confirmamos tu diagnóstico en profundidad y construyes — con Lorena — tu protocolo personalizado para desactivar exactamente este bloqueo.</p><a href="https://ig.me/m/lorenalaverdeofficial" class="btn-primary" style="display:inline-block;">Escribe DIAGNÓSTICO al DM →</a></div>'
-    : '<div style="background:var(--cream-dark); border:1px solid rgba(61,35,20,0.12); padding:28px; text-align:center; margin-top:28px;"><p style="font-size:14px; color:var(--espresso-light); margin:0;">Y por eso mismo, con honestidad: el programa completo no es lo que necesitas ahora. Resuelve primero el recurso concreto. Cuando lo logres — si aparece un freno interno — vuelve a vivir esta semana. La puerta queda abierta. 🧡</p></div>';
+    ? ebookBlock() + '<div class="res-dm-cta"><div class="serif" style="font-size:23px; color:var(--cream); margin-bottom:10px;">El juego te mostró el patrón.<br>La sesión te da el plan.</div><p style="font-size:13.5px; color:rgba(245,239,224,0.6); max-width:420px; margin:0 auto 22px; line-height:1.8;">En 90 minutos confirmamos tu diagnóstico en profundidad y construyes — con Lorena — tu protocolo personalizado para desactivar exactamente este bloqueo.</p><a href="' + waUrl("Hola Lorena, acabo de jugar La Semana Decisiva y mi resultado fue \"" + a.nombre + "\". Quiero agendar mi sesión de diagnóstico.") + '" target="_blank" rel="noopener" class="btn-primary" style="display:inline-block;">Escríbeme por WhatsApp →</a></div>'
+    : ebookBlock() + '<div style="background:var(--cream-dark); border:1px solid rgba(61,35,20,0.12); padding:28px; text-align:center; margin-top:28px;"><p style="font-size:14px; color:var(--espresso-light); margin:0;">Y por eso mismo, con honestidad: el programa completo no es lo que necesitas ahora. Resuelve primero el recurso concreto. Cuando lo logres — si aparece un freno interno — vuelve a vivir esta semana. La puerta queda abierta. 🧡</p></div>';
 
   cont.innerHTML =
     '<div class="j-rev-hero"><div class="j-rev-emoji">' + esp.emoji + '</div>' +
@@ -986,9 +999,9 @@ function renderResultado(dom, sec, scores, nombre) {
   let tools = "";
   a.herramientas.forEach(h => { tools += '<span class="tool">' + h + '</span>'; });
 
-  const ctaFinal = dom !== "recursos"
-    ? '<div class="res-dm-cta"><div class="serif" style="font-size:24px; color:var(--cream); margin-bottom:10px;">Tu siguiente paso está a un mensaje de distancia</div><p style="font-size:13.5px; color:rgba(245,239,224,0.6); max-width:420px; margin:0 auto 24px; line-height:1.8;">Escribe la palabra <strong style="color:var(--gold);">DIAGNÓSTICO</strong> al DM de Instagram y cuéntame tu resultado. Yo personalmente te respondo.</p><a href="https://ig.me/m/lorenalaverdeofficial" class="btn-primary" style="display:inline-block;">Escribir a Lorena →</a></div>'
-    : "";
+  const ctaFinal = ebookBlock() + (dom !== "recursos"
+    ? '<div class="res-dm-cta"><div class="serif" style="font-size:24px; color:var(--cream); margin-bottom:10px;">Tu siguiente paso está a un mensaje de distancia</div><p style="font-size:13.5px; color:rgba(245,239,224,0.6); max-width:420px; margin:0 auto 24px; line-height:1.8;">Escríbeme por <strong style="color:var(--gold);">WhatsApp</strong> y cuéntame tu resultado. Yo personalmente te respondo y agendamos tu sesión de diagnóstico.</p><a href="' + waUrl("Hola Lorena, acabo de hacer el Test de Bloqueo Neurocultural y mi resultado fue \"" + a.nombre + "\". Quiero agendar mi sesión de diagnóstico.") + '" target="_blank" rel="noopener" class="btn-primary" style="display:inline-block;">Escribir a Lorena por WhatsApp →</a></div>'
+    : "");
 
   document.getElementById("t-resultado").innerHTML =
     '<div class="res-hero"><div class="mono" style="font-size:10px; letter-spacing:3px; text-transform:uppercase; color:var(--gold); margin-bottom:20px;">' + (nombre ? nombre + " — tu" : "Tu") + ' arquetipo de bloqueo dominante</div>' +
