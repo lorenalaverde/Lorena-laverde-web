@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Siete preguntas Rentable | Lorena Laverde</title>
+<meta name="description" content="Siete preguntas para ver qué estás dejando de mirar en tu negocio. Tres minutos, sin respuestas incorrectas.">
+<meta property="og:title" content="Siete preguntas Rentable">
+<meta property="og:description" content="Descubre qué estás dejando de mirar en tu negocio. Tres minutos.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=DM+Sans:wght@400;500;700&family=DM+Mono:wght@400;500&display=swap">
+<style>
+:root {
+  --bg: #F5EFE0; --card: #FBF6EA; --ink: #3D2314; --ink-2: #6B5443; --line: #C9B99A;
+  --accent: #C4652A; --accent-strong: #A9521F; --on-accent: #F5EFE0;
+  --ok: #7A9E7E; --warn: #D4A853; --alert: #C4652A; --on-chip: #3D2314;
+  --font-display: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --font-body: "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "DM Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #2A170D; --card: #3D2314; --ink: #F5EFE0; --ink-2: #C9B99A; --line: #5E3E2B;
+    --accent: #E08A4F; --accent-strong: #E08A4F; --on-accent: #2A170D;
+    --ok: #8FB394; --warn: #D4A853; --alert: #E08A4F; --on-chip: #2A170D;
+    color-scheme: dark;
+  }
+}
+* { box-sizing: border-box; }
+html { color-scheme: light dark; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 17px; line-height: 1.55; padding-inline: 16px; padding-block: 20px 48px; }
+.wrap { max-width: 640px; margin-inline: auto; display: flex; flex-direction: column; gap: 20px; }
+.brand { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-2); }
+.brand b { color: var(--accent); font-weight: 500; }
+.progress { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; }
+.progress i { height: 4px; background: var(--line); border-radius: 2px; transition: background .3s; }
+.progress i.done { background: var(--accent); }
+.progress i.now { background: var(--ink); }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 28px 22px 24px; display: flex; flex-direction: column; gap: 22px; min-width: 0; }
+h1, h2 { font-family: var(--font-display); font-weight: 600; line-height: 1.08; margin: 0; text-wrap: balance; }
+h1 { font-size: clamp(2.3rem, 9vw, 3.4rem); font-style: italic; }
+h2 { font-size: clamp(1.8rem, 6.5vw, 2.5rem); }
+p { margin: 0; }
+.lead { color: var(--ink-2); max-width: 52ch; }
+.kicker { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); }
+.opts { display: flex; flex-direction: column; gap: 10px; }
+.opt { font: inherit; text-align: left; color: var(--ink); background: transparent; border: 1.5px solid var(--line); border-radius: 12px; padding: 14px 16px; cursor: pointer; display: flex; gap: 12px; align-items: flex-start; transition: border-color .15s, background .15s; }
+.opt:hover:not(:disabled) { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 8%, transparent); }
+.opt:disabled { cursor: default; }
+.opt .dot { flex: none; width: 18px; height: 18px; margin-top: 3px; border: 1.5px solid var(--ink-2); border-radius: 50%; display: grid; place-items: center; }
+.opt.picked { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 12%, transparent); }
+.opt.picked .dot { border-color: var(--accent); background: var(--accent); }
+.opt.picked .dot::after { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--on-accent); }
+.opt.faded { opacity: .45; }
+button:focus-visible, a:focus-visible, input:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.btn { font: inherit; font-weight: 700; background: var(--accent-strong); color: var(--on-accent); border: 0; border-radius: 12px; padding: 14px 22px; cursor: pointer; text-decoration: none; display: inline-flex; justify-content: center; align-items: center; gap: 8px; align-self: flex-start; }
+.btn:hover { filter: brightness(1.08); }
+.btn.ghost { background: transparent; color: var(--ink); border: 1.5px solid var(--line); }
+.pause { border-top: 1px solid var(--line); padding-top: 20px; display: flex; flex-direction: column; gap: 18px; animation: rise .7s ease both; }
+.pause q { font-family: var(--font-display); font-style: italic; font-size: clamp(1.5rem, 5.5vw, 2rem); line-height: 1.2; quotes: none; text-wrap: balance; }
+.pause .btn { animation: rise .6s ease 1.1s both; }
+@keyframes rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+.map { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+.map li { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+.map li:last-child { border-bottom: 0; }
+.map .name { min-width: 0; }
+.chip { flex: none; font-family: var(--font-mono); font-size: 12px; letter-spacing: .04em; padding: 5px 10px; border-radius: 999px; display: inline-flex; gap: 6px; align-items: center; color: var(--on-chip); }
+.chip.s0 { background: var(--ok); } .chip.s1 { background: var(--warn); } .chip.s2 { background: var(--alert); }
+.chip svg { width: 10px; height: 10px; flex: none; }
+.start { background: color-mix(in srgb, var(--accent) 10%, transparent); border: 1px solid var(--accent); border-radius: 14px; padding: 18px; display: flex; flex-direction: column; gap: 6px; }
+.start b { font-family: var(--font-mono); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); font-weight: 500; }
+.row { display: flex; flex-wrap: wrap; gap: 10px; }
+form.mail { display: flex; flex-wrap: wrap; gap: 10px; }
+form.mail input { flex: 1 1 220px; min-width: 0; font: inherit; color: var(--ink); background: var(--bg); border: 1.5px solid var(--line); border-radius: 12px; padding: 13px 14px; }
+.fine { font-size: 14px; color: var(--ink-2); }
+.num { font-family: var(--font-mono); }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+@media (prefers-reduced-motion: reduce) { .pause, .pause .btn { animation: none; } .opt, .progress i { transition: none; } }
+</style>
+</head>
+<body>
+<main class="wrap" id="app" aria-live="polite">
+  <div class="brand"><span>Lorena Laverde</span><b>Rentable™</b></div>
+  <div class="progress" id="progress" aria-hidden="true"></div>
+  <section class="card" id="card"></section>
+  <p class="fine" id="foot">Siete preguntas, unos tres minutos. No hay respuestas incorrectas, solo honestas.</p>
+</main>
+
+<script>
+(function () {
+  // Envío al formulario de MailerLite «Siete Preguntas Rentable - Mapa» (grupo «Siete Preguntas Rentable»).
+  var MAILERLITE_ACTION = "https://assets.mailerlite.com/jsonp/2539461/forms/200895718533105419/subscribe";
+  var WHATSAPP = "17063327508";
+
+  var Q = [
+    { key: "Margen por venta", q: "¿Qué te deja realmente cada venta?", sub: "No lo que facturas: lo que queda después de los costos directos.",
+      opts: ["Lo sé con números, por producto o servicio", "Lo calculo a ojo", "Nunca lo he separado de lo que facturo"],
+      quote: "Facturar no es lo mismo que ganar.",
+      next: "Abre los costos directos de tu producto principal y calcula cuánto queda por cada venta." },
+    { key: "Lo que más vendes y lo que más deja", q: "¿Cuál vendes más y cuál te deja más? ¿Son el mismo?", sub: "Puedes estar empujando justo lo que menos aporta.",
+      opts: ["Los comparé y sé cuál es cuál", "Creo saberlo, pero no lo he comparado", "No lo sé"],
+      quote: "Más ventas no son automáticamente un negocio mejor.",
+      next: "Haz una lista de tus productos con dos columnas: cuánto vendes y cuánto te deja cada uno." },
+    { key: "Clientes que ya preguntan", q: "¿Qué pasa con los clientes que ya te preguntan?", sub: "Cuántos reciben seguimiento, dónde se van y cuántos vuelven a comprar.",
+      opts: ["Lo mido: preguntan, reciben seguimiento y compran", "Hago seguimiento, pero sin medirlo", "Se pierden y no sé cuántos"],
+      quote: "A veces buscamos tráfico nuevo mientras dejamos dinero en el que ya llegó.",
+      next: "Cuenta cuántas personas te preguntaron este mes y cuántas terminaron comprando." },
+    { key: "Resistencia a una guerra de precios", q: "Si un competidor bajara sus precios mañana, ¿hasta dónde aguanta tu margen?", sub: "El mercado cambió para mí antes de que mi agenda me avisara.",
+      opts: ["Sé hasta dónde puedo bajar sin perder", "Tengo una idea, pero no el número", "No lo he calculado"],
+      quote: "Una agenda llena puede esconder lo que el mercado ya está cambiando.",
+      next: "Calcula tu margen actual y cuánto quedaría si tuvieras que bajar tu precio un 10%." },
+    { key: "Números que dejaste de mirar", q: "¿Qué número mirabas antes y hoy ya no miras?", sub: "Pasa más cuando las cosas van bien.",
+      opts: ["Reviso mis números cada mes, aunque todo vaya bien", "Los miro cuando algo va mal", "Hace meses que no abro mis números"],
+      quote: "Cuando todo funciona, hay problemas que dejan de parecer urgentes.",
+      next: "Elige tres números y revísalos cada semana, quince minutos, aunque todo vaya bien." },
+    { key: "Capacidad para crecer", q: "Si mañana llegaran el doble de clientes, ¿tu operación lo absorbe sin comerse el margen?", sub: "Pensar en cómo respondería tu equipo, tu tiempo y tus proveedores.",
+      opts: ["Sé cuánto volumen soporta mi operación", "Creo que sí, pero no lo he probado", "Se me desordenaría"],
+      quote: "Más demanda sobre un sistema desordenado hace más grande el problema.",
+      next: "Anota qué se atrasa o se rompe primero cuando tienes mucha demanda." },
+    { key: "Negocio sin ti", q: "Si no estás una semana, ¿qué se detiene en tu negocio?", sub: "Sin celular, sin llamadas, sin “solo una cosita”.",
+      opts: ["Sigue funcionando sin mí", "Sigue, pero con llamadas mías", "Se detiene casi todo"],
+      quote: "Que dependa de ti no es un defecto. Es un dato.",
+      next: "Escribe cinco cosas que solo tú sabes hacer. Ahí está tu dependencia." }
+  ];
+  var LABEL = ["Lo veo", "A ojo", "Sin mirar"];
+  var ICON = [
+    '<svg viewBox="0 0 10 10" aria-hidden="true"><path d="M1.5 5.5l2.3 2.3L8.5 2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>',
+    '<svg viewBox="0 0 10 10" aria-hidden="true"><path d="M1.5 5h7" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>',
+    '<svg viewBox="0 0 10 10" aria-hidden="true"><circle cx="5" cy="5" r="3.4" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>'
+  ];
+
+  var card = document.getElementById("card");
+  var progress = document.getElementById("progress");
+  var foot = document.getElementById("foot");
+  var answers = [];
+  var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  function setProgress(i) {
+    var h = "";
+    for (var n = 0; n < Q.length; n++) h += '<i class="' + (n < i ? "done" : n === i ? "now" : "") + '"></i>';
+    progress.innerHTML = h;
+  }
+
+  function intro() {
+    setProgress(-1);
+    foot.hidden = false;
+    card.innerHTML =
+      '<p class="kicker">Para dueños de negocio</p>' +
+      '<h1>Lo más peligroso fue cuando mejor me iba</h1>' +
+      '<p class="lead">Tenía la agenda llena y dejé de mirar donde antes sí miraba. Estas siete preguntas te muestran qué estás dejando de mirar tú.</p>' +
+      '<button class="btn" id="go" type="button">Empezar</button>';
+    document.getElementById("go").onclick = function () { ask(0); };
+  }
+
+  function ask(i) {
+    setProgress(i);
+    var q = Q[i];
+    var opts = q.opts.map(function (t, k) {
+      return '<button class="opt" type="button" data-k="' + k + '"><span class="dot"></span><span>' + esc(t) + "</span></button>";
+    }).join("");
+    card.innerHTML =
+      '<p class="kicker num">Pregunta ' + (i + 1) + " de " + Q.length + "</p>" +
+      "<h2>" + esc(q.q) + "</h2>" +
+      '<p class="lead">' + esc(q.sub) + "</p>" +
+      '<div class="opts" id="opts">' + opts + "</div>" +
+      '<div id="after"></div>';
+    var btns = card.querySelectorAll(".opt");
+    Array.prototype.forEach.call(btns, function (b) {
+      b.onclick = function () {
+        var k = +b.getAttribute("data-k");
+        answers[i] = k;
+        Array.prototype.forEach.call(btns, function (x) {
+          x.disabled = true;
+          if (x === b) x.classList.add("picked"); else x.classList.add("faded");
+        });
+        var last = i === Q.length - 1;
+        document.getElementById("after").innerHTML =
+          '<div class="pause"><q>' + esc(q.quote) + '</q><button class="btn" id="nx" type="button">' + (last ? "Ver mi mapa" : "Siguiente") + "</button></div>";
+        var nx = document.getElementById("nx");
+        nx.onclick = function () { last ? result() : ask(i + 1); };
+        try { nx.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "nearest" }); } catch (e) {}
+      };
+    });
+    try { window.scrollTo({ top: 0, behavior: "auto" }); } catch (e) {}
+  }
+
+  function result() {
+    setProgress(Q.length);
+    foot.hidden = true;
+    var total = answers.reduce(function (a, b) { return a + b; }, 0);
+    var head, body;
+    if (total <= 4) { head = "Estás mirando casi todo."; body = "Tu reto es sostener la costumbre cuando el negocio va bien, que es justo cuando se suelta."; }
+    else if (total <= 9) { head = "Donde hay intuición, hay oportunidad."; body = "Ya sabes que estos números importan. Convertir lo que calculas a ojo en cifras te da control antes de que el mercado te lo pida."; }
+    else { head = "Hay mucho que hoy no estás viendo."; body = "No es una falla tuya. Es lo que pasa cuando el negocio te absorbe. La buena noticia es que casi todo se resuelve abriendo los números que ya tienes."; }
+
+    var worst = 0;
+    for (var n = 1; n < Q.length; n++) if (answers[n] > answers[worst]) worst = n;
+    var startHtml = answers[worst] === 0
+      ? '<div class="start"><b>Para sostenerlo</b><p>Elige un día fijo al mes para revisar estos siete puntos. Lo que funciona hoy se descuida cuando todo va bien.</p></div>'
+      : '<div class="start"><b>Empieza por aquí</b><p><strong>' + esc(Q[worst].key) + ".</strong> " + esc(Q[worst].next) + "</p></div>";
+
+    var map = Q.map(function (q, i) {
+      var s = answers[i];
+      return '<li><span class="name">' + esc(q.key) + '</span><span class="chip s' + s + '">' + ICON[s] + LABEL[s] + "</span></li>";
+    }).join("");
+
+    var seen = answers.filter(function (a) { return a === 0; }).length;
+    var msg = "Hola Lorena, hice las 7 preguntas de rentabilidad. Veo " + seen + " de 7 con números. Quiero conversar sobre: " + Q[worst].key + ".";
+    var wa = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(msg);
+
+    card.innerHTML =
+      '<p class="kicker">Tu mapa</p>' +
+      "<h2>" + esc(head) + "</h2>" +
+      '<p class="lead">' + esc(body) + "</p>" +
+      '<ul class="map" aria-label="Resultado por pregunta">' + map + "</ul>" +
+      startHtml +
+      '<div class="pause" style="animation:none"><p><strong>¿Quieres que lo miremos juntas?</strong></p>' +
+      '<p class="fine">Escríbeme por WhatsApp con tu resultado y conversamos sobre lo que más te inquietó. Sin compromiso.</p>' +
+      '<div class="row"><a class="btn" href="' + wa + '" target="_blank" rel="noopener">Escribirme por WhatsApp</a>' +
+      '<button class="btn ghost" id="again" type="button">Volver a empezar</button></div>' +
+      '<p class="fine">También puedes escribir al <span class="num">+1 706 332 7508</span>.</p></div>' +
+      '<form class="mail" id="mail"><label class="sr" for="em">Tu correo</label>' +
+      '<input id="em" type="email" required autocomplete="email" placeholder="Tu correo, para recibir tu mapa">' +
+      '<button class="btn" type="submit">Enviarme mi mapa</button></form>' +
+      '<p class="fine" id="mailmsg">Solo te escribiré sobre rentabilidad. Puedes darte de baja cuando quieras.</p>';
+
+    document.getElementById("again").onclick = function () { answers = []; intro(); };
+    document.getElementById("mail").onsubmit = function (e) {
+      e.preventDefault();
+      var email = document.getElementById("em").value.trim();
+      var out = document.getElementById("mailmsg");
+      if (!email) { out.textContent = "Escribe tu correo para continuar."; return; }
+      var fd = new FormData();
+      fd.append("fields[email]", email);
+      fd.append("ml-submit", "1");
+      fd.append("anticsrf", "true");
+      fetch(MAILERLITE_ACTION, { method: "POST", body: fd, mode: "no-cors" })
+        .then(function () { out.textContent = "Listo. Revisa tu correo en unos minutos (y la carpeta de promociones)."; document.getElementById("mail").hidden = true; })
+        .catch(function () { out.textContent = "No pude enviarlo. Intenta de nuevo o escríbeme por WhatsApp."; });
+    };
+    try { window.scrollTo({ top: 0, behavior: "auto" }); } catch (e) {}
+  }
+
+  intro();
+})();
+</script>
+</body>
+</html>
