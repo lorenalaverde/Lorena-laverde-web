@@ -224,7 +224,7 @@ form.mail input { flex: 1 1 220px; min-width: 0; font: inherit; color: var(--ink
       '<p class="fine">También puedes escribir al <span class="num">+1 706 332 7508</span>.</p></div>' +
       '<form class="mail" id="mail"><label class="sr" for="em">Tu correo</label>' +
       '<input id="em" type="email" required autocomplete="email" placeholder="Tu correo, para recibir tu mapa">' +
-      '<button class="btn" type="submit">Enviarme mi mapa</button></form>' +
+      '<button class="btn" type="submit">Recibir mi mapa por correo</button></form>' +
       '<p class="fine" id="mailmsg">Solo te escribiré sobre rentabilidad. Puedes darte de baja cuando quieras.</p>';
 
     document.getElementById("again").onclick = function () { answers = []; intro(); };
@@ -235,6 +235,10 @@ form.mail input { flex: 1 1 220px; min-width: 0; font: inherit; color: var(--ink
       if (!email) { out.textContent = "Escribe tu correo para continuar."; return; }
       var fd = new FormData();
       fd.append("fields[email]", email);
+      var allSeen = answers[worst] === 0;
+      fd.append("fields[rentable_prioridad]", allSeen ? "Sostener lo que ya miras" : Q[worst].key);
+      fd.append("fields[rentable_puntaje]", String(seen));
+      fd.append("fields[rentable_paso]", allSeen ? "Elige un día fijo al mes para revisar estos siete puntos." : Q[worst].next);
       fd.append("ml-submit", "1");
       fd.append("anticsrf", "true");
       fetch(MAILERLITE_ACTION, { method: "POST", body: fd, mode: "no-cors" })
