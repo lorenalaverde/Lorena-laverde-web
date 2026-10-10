@@ -228,11 +228,27 @@ form.mail input { flex: 1 1 220px; min-width: 0; font: inherit; color: var(--ink
       '<p class="fine" id="mailmsg">Solo te escribiré sobre rentabilidad. Puedes darte de baja cuando quieras.</p>';
 
     document.getElementById("again").onclick = function () { answers = []; intro(); };
+    function sent(email) {
+      setProgress(Q.length);
+      card.innerHTML =
+        '<p class="kicker">Listo</p>' +
+        "<h2>Tu mapa va en camino</h2>" +
+        '<p class="lead">Te lo envié a <strong>' + esc(email) + "</strong>. Debe llegar en unos minutos.</p>" +
+        '<div class="start"><b>Si no lo ves</b><p>Revisa tu carpeta de promociones o de spam, y márcalo como seguro para que los próximos te lleguen. Viene de hola@lorenalaverde.com.</p></div>' +
+        '<p class="fine">En los próximos días recibirás dos correos más, con una historia y con la forma en que trabajo.</p>' +
+        '<div class="row"><a class="btn" href="' + wa + '" target="_blank" rel="noopener">Escribirme por WhatsApp</a>' +
+        '<button class="btn ghost" id="back" type="button">Volver a ver mi mapa</button></div>';
+      document.getElementById("back").onclick = function () { result(); };
+      try { window.scrollTo({ top: 0, behavior: "auto" }); } catch (e) {}
+    }
     document.getElementById("mail").onsubmit = function (e) {
       e.preventDefault();
       var email = document.getElementById("em").value.trim();
       var out = document.getElementById("mailmsg");
+      var btn = document.querySelector("#mail button[type=submit]");
       if (!email) { out.textContent = "Escribe tu correo para continuar."; return; }
+      btn.disabled = true; btn.textContent = "Enviando…";
+      out.textContent = "Enviando tu mapa, un momento…";
       var fd = new FormData();
       fd.append("fields[email]", email);
       var allSeen = answers[worst] === 0;
@@ -242,9 +258,10 @@ form.mail input { flex: 1 1 220px; min-width: 0; font: inherit; color: var(--ink
       fd.append("ml-submit", "1");
       fd.append("anticsrf", "true");
       fetch(MAILERLITE_ACTION, { method: "POST", body: fd, mode: "no-cors" })
-        .then(function () { out.textContent = "Listo. Revisa tu correo en unos minutos (y la carpeta de promociones)."; document.getElementById("mail").hidden = true; })
-        .catch(function () { out.textContent = "No pude enviarlo. Intenta de nuevo o escríbeme por WhatsApp."; });
+        .then(function () { sent(email); })
+        .catch(function () { btn.disabled = false; btn.textContent = "Recibir mi mapa por correo"; out.textContent = "No pude enviarlo. Intenta de nuevo o escríbeme por WhatsApp."; });
     };
+    
     try { window.scrollTo({ top: 0, behavior: "auto" }); } catch (e) {}
   }
 
