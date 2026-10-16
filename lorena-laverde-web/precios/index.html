@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Ejercicio de precios Rentable | Lorena Laverde</title>
+<meta name="description" content="Del miedo a cobrar al precio por valor. Un ejercicio de seis pasos, unos veinte minutos, con tus números reales.">
+<meta property="og:title" content="Ejercicio de precios Rentable">
+<meta property="og:description" content="Descubre si tu precio lo pusiste por valor, por costo o por miedo.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=DM+Sans:wght@400;500;700&family=DM+Mono:wght@400;500&display=swap">
+<style>
+:root {
+  --bg: #FAF7F1; --card: #FFFFFF; --ink: #4A443E; --ink-2: #7A726A; --line: #E7DFD2;
+  --accent: #CF7A45; --accent-strong: #B85A22; --on-accent: #FFFFFF;
+  --ok: #8BAE8F; --warn: #E2B964; --alert: #D98757; --on-chip: #3F3A35;
+  --font-display: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --font-body: "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "DM Mono", ui-monospace, Menlo, Consolas, monospace;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 17px; line-height: 1.55; padding-inline: 16px; padding-block: 20px 48px; }
+.wrap { max-width: 640px; margin-inline: auto; display: flex; flex-direction: column; gap: 20px; }
+.brand { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-2); }
+.brand b { color: var(--accent); font-weight: 500; }
+.progress { display: grid; grid-template-columns: repeat(6, 1fr); gap: 6px; }
+.progress i { height: 4px; background: var(--line); border-radius: 2px; transition: background .3s; }
+.progress i.done { background: var(--accent); }
+.progress i.now { background: var(--ink); }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 28px 22px 24px; display: flex; flex-direction: column; gap: 20px; min-width: 0; }
+h1, h2 { font-family: var(--font-display); font-weight: 600; line-height: 1.08; margin: 0; text-wrap: balance; }
+h1 { font-size: clamp(2.2rem, 9vw, 3.2rem); font-style: italic; }
+h2 { font-size: clamp(1.7rem, 6.5vw, 2.3rem); }
+p { margin: 0; }
+.lead { color: var(--ink-2); max-width: 54ch; }
+.kicker { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); }
+.fields { display: flex; flex-direction: column; gap: 14px; }
+label { display: flex; flex-direction: column; gap: 6px; font-weight: 500; font-size: 15px; }
+label small { font-weight: 400; color: var(--ink-2); font-size: 14px; }
+input[type=text], input[type=number], input[type=tel], textarea { font: inherit; color: var(--ink); background: var(--bg); border: 1.5px solid var(--line); border-radius: 12px; padding: 12px 14px; width: 100%; min-width: 0; }
+textarea { resize: vertical; min-height: 84px; }
+.money { position: relative; }
+.money span { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: var(--ink-2); font-family: var(--font-mono); }
+.money input { padding-left: 30px; }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+@media (max-width: 460px) { .two { grid-template-columns: 1fr; } }
+button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.btn { font: inherit; font-weight: 700; background: var(--accent-strong); color: var(--on-accent); border: 0; border-radius: 12px; padding: 14px 22px; cursor: pointer; text-decoration: none; display: inline-flex; justify-content: center; align-items: center; gap: 8px; }
+.btn:hover { filter: brightness(1.08); }
+.btn.ghost { background: transparent; color: var(--ink); border: 1.5px solid var(--line); }
+.nav { display: flex; flex-wrap: wrap; gap: 10px; justify-content: space-between; }
+.calc { background: color-mix(in srgb, var(--accent) 9%, transparent); border: 1px solid var(--accent); border-radius: 14px; padding: 16px 18px; display: flex; flex-direction: column; gap: 4px; }
+.calc b { font-family: var(--font-mono); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--accent-strong); font-weight: 500; }
+.calc .big { font-family: var(--font-display); font-size: 2.2rem; font-weight: 600; line-height: 1.1; }
+.note { background: var(--bg); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; font-size: 15px; color: var(--ink-2); }
+.scale { display: flex; flex-direction: column; gap: 8px; }
+.bar { position: relative; height: 12px; border-radius: 8px; background: linear-gradient(90deg, var(--alert), var(--warn) 45%, var(--ok)); }
+.bar i { position: absolute; top: -5px; width: 4px; height: 22px; border-radius: 2px; background: var(--ink); transform: translateX(-2px); }
+.bar-legend { display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 12px; color: var(--ink-2); gap: 8px; }
+.checks { display: flex; flex-direction: column; gap: 10px; }
+.chk { font: inherit; text-align: left; color: var(--ink); background: transparent; border: 1.5px solid var(--line); border-radius: 12px; padding: 14px 16px; cursor: pointer; display: flex; gap: 12px; align-items: flex-start; transition: border-color .15s, background .15s; font-weight: 400; }
+.chk:hover { border-color: var(--accent); }
+.chk .box { flex: none; width: 20px; height: 20px; margin-top: 2px; border: 1.5px solid var(--ink-2); border-radius: 6px; display: grid; place-items: center; }
+.chk[aria-pressed="true"] { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 12%, transparent); }
+.chk[aria-pressed="true"] .box { border-color: var(--accent); background: var(--accent); }
+.chk[aria-pressed="true"] .box::after { content: ""; width: 9px; height: 5px; border-left: 2px solid var(--on-accent); border-bottom: 2px solid var(--on-accent); transform: rotate(-45deg) translate(1px, -1px); }
+.quote { font-family: var(--font-display); font-style: italic; font-size: clamp(1.4rem, 5.5vw, 1.9rem); line-height: 1.25; text-wrap: balance; border-left: 3px solid var(--accent); padding-left: 16px; }
+.summary { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+.summary li { display: flex; justify-content: space-between; gap: 14px; padding: 11px 0; border-bottom: 1px solid var(--line); }
+.summary li:last-child { border-bottom: 0; }
+.summary span:last-child { font-family: var(--font-mono); text-align: right; }
+.fine { font-size: 14px; color: var(--ink-2); }
+.row { display: flex; flex-wrap: wrap; gap: 10px; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+@media (prefers-reduced-motion: reduce) { .progress i, .chk { transition: none; } }
+@media print { .progress, .nav, .row, .brand { display: none; } body { background: #fff; } .card { border: 0; padding: 0; } }
+</style>
+</head>
+<body>
+<main class="wrap" id="app" aria-live="polite">
+  <div class="brand"><span>Lorena Laverde</span><b>Rentable™</b></div>
+  <div class="progress" id="progress" aria-hidden="true"></div>
+  <section class="card" id="card"></section>
+  <p class="fine" id="foot"></p>
+</main>
+
+<script>
+(function () {
+  var WHATSAPP = "17063327508";
+  var card = document.getElementById("card");
+  var progress = document.getElementById("progress");
+  var foot = document.getElementById("foot");
+  var step = 0; // 0 = portada, 1..6 pasos, 7 = resumen
+  var D = {
+    servicio: "", resultado: "",
+    perdidaMes: "", horasPerdidas: "",
+    horas: "", valorHora: "", herramientas: "", marketing: "", otros: "", margen: "20",
+    hoy: "",
+    motivos: [],
+    inversion: ""
+  };
+
+  var MOTIVOS = [
+    { id: "otros", t: "Lo puse mirando lo que cobra otra persona", fuga: true },
+    { id: "miedo", t: "Lo bajé porque me dio miedo que dijeran que era caro", fuga: true },
+    { id: "sinpedir", t: "Lo bajé para que me compraran, sin que nadie me pidiera descuento", fuga: true },
+    { id: "horas", t: "Lo calculé por mis horas, no por el resultado", fuga: true },
+    { id: "valor", t: "Lo pensé desde el resultado y lo que vale para mi cliente", fuga: false }
+  ];
+
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  function num(v) { var n = parseFloat(String(v).replace(/[^0-9.\-]/g, "")); return isFinite(n) && n > 0 ? n : 0; }
+  function money(n) { return "$" + Math.round(n).toLocaleString("en-US"); }
+  function roundTen(n) { return Math.ceil(n / 10) * 10; }
+  function costo() { return num(D.horas) * num(D.valorHora) + num(D.herramientas) + num(D.marketing) + num(D.otros); }
+  function piso() { return costo() * (1 + num(D.margen) / 100); }
+  function valor6() { return num(D.perdidaMes) * 6; }
+
+  function renderProgress() {
+    var h = "";
+    for (var i = 1; i <= 6; i++) h += '<i class="' + (step > i || step === 7 ? "done" : step === i ? "now" : "") + '"></i>';
+    progress.innerHTML = h;
+    progress.style.visibility = step === 0 ? "hidden" : "visible";
+  }
+
+  function moneyField(id, label, hint, val) {
+    return '<label>' + label + (hint ? '<small>' + hint + '</small>' : '') +
+      '<span class="money"><span>$</span><input type="number" inputmode="decimal" min="0" step="any" id="' + id + '" value="' + esc(val) + '"></span></label>';
+  }
+  function navHtml(last) {
+    return '<div class="nav"><button class="btn ghost" id="back" type="button">Atrás</button>' +
+      '<button class="btn" id="next" type="button">' + (last || "Siguiente") + '</button></div>';
+  }
+  function bind(map) {
+    Object.keys(map).forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el) el.addEventListener("input", function () { D[map[id]] = el.value; live(); });
+    });
+    var b = document.getElementById("back"), n = document.getElementById("next");
+    if (b) b.addEventListener("click", function () { go(step - 1); });
+    if (n) n.addEventListener("click", function () { go(step + 1); });
+  }
+  var live = function () {};
+
+  function go(s) {
+    step = s; live = function () {}; render();
+    window.scrollTo({ top: 0, behavior: window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+    var h = card.querySelector("h1,h2"); if (h) { h.setAttribute("tabindex", "-1"); h.focus({ preventScroll: true }); }
+  }
+
+  function render() {
+    renderProgress();
+    foot.textContent = step === 0 ? "Unos veinte minutos. No guardamos nada: tus números se quedan en tu pantalla." :
+      step < 7 ? "Paso " + step + " de 6. Tus números no se guardan ni se envían a ningún lado." : "";
+    ({ 0: cover, 1: s1, 2: s2, 3: s3, 4: s4, 5: s5, 6: s6, 7: done })[step]();
+  }
+
+  function cover() {
+    card.innerHTML = '<p class="kicker">Ejercicio de precios · Método Rentable™</p>' +
+      '<h1>De cobrar por hora a cobrar por resultado</h1>' +
+      '<p class="lead">Si bajas el precio para que te compren, no te compran por valor: te compran por barata. Y la barata siempre se reemplaza. ' +
+      'Este ejercicio te ayuda a ver si tu precio de hoy lo pusiste por valor, por costo o por miedo.</p>' +
+      '<p class="lead">Ten a la mano un servicio real y tus números. No hay respuestas buenas ni malas: hay precios que pusiste mirando a otros y precios que puedes poner mirando el resultado.</p>' +
+      '<div class="row"><button class="btn" id="start" type="button">Empezar el ejercicio</button></div>';
+    document.getElementById("start").addEventListener("click", function () { go(1); });
+  }
+
+  function s1() {
+    card.innerHTML = '<p class="kicker">Paso 1 · El resultado</p><h2>¿Qué resultado compra tu cliente?</h2>' +
+      '<p class="lead">Tu cliente no compra horas: compra un resultado. Escríbelo con sus palabras, no con las tuyas: qué quiere dejar de sufrir o qué quiere lograr. Habla del resultado al que apunta tu servicio, sin prometer garantías.</p>' +
+      '<div class="fields"><label>Servicio que vas a analizar<input type="text" id="servicio" value="' + esc(D.servicio) + '" placeholder="Por ejemplo: asesoría de ventas"></label>' +
+      '<label>El resultado que busca tu cliente, en sus palabras<textarea id="resultado" placeholder="Por ejemplo: saber cuánto gana de verdad y dejar de trabajar sin parar">' + esc(D.resultado) + '</textarea></label></div>' +
+      navHtml();
+    bind({ servicio: "servicio", resultado: "resultado" });
+  }
+
+  function s2() {
+    card.innerHTML = '<p class="kicker">Paso 2 · El tamaño del problema</p><h2>¿Cuánto le cuesta NO resolverlo?</h2>' +
+      '<p class="lead">Con una estimación honesta de tu cliente típico: lo que le cuesta seguir igual. Dinero que se le va, tiempo que pierde, ventas que no cierra. Ese es el tamaño del problema que resuelves.</p>' +
+      '<div class="fields">' + moneyField("perdidaMes", "Dinero que pierde o deja de ganar al mes", "Tu mejor estimación, no hace falta que sea exacta.", D.perdidaMes) +
+      '<label>Horas que pierde al mes por no tenerlo resuelto<input type="number" inputmode="decimal" min="0" step="any" id="horasPerdidas" value="' + esc(D.horasPerdidas) + '"></label></div>' +
+      '<div class="calc"><b>Seguir igual 6 meses le cuesta, aproximadamente</b><span class="big" id="v6"></span></div>' +
+      '<p class="note">Es una estimación tuya sobre tu cliente, no un dato de mercado. Si no la sabes, pregúntasela en tu próxima conversación: es la mejor pregunta de venta que existe.</p>' +
+      navHtml();
+    bind({ perdidaMes: "perdidaMes", horasPerdidas: "horasPerdidas" });
+    live = function () { document.getElementById("v6").textContent = money(valor6()); }; live();
+  }
+
+  function s3() {
+    card.innerHTML = '<p class="kicker">Paso 3 · Tu piso</p><h2>Lo mínimo que tu precio debe cubrir</h2>' +
+      '<p class="lead">El costo no es tu precio: es tu piso. Suma lo que te cuesta entregar el servicio y añade un margen. Como referencia general, el margen mínimo para servicios y consultoría es de 20%.</p>' +
+      '<div class="fields"><div class="two"><label>Horas que dedicas a entregarlo<input type="number" inputmode="decimal" min="0" step="any" id="horas" value="' + esc(D.horas) + '"></label>' +
+      moneyField("valorHora", "Lo que vale tu hora", "", D.valorHora) + '</div>' +
+      moneyField("herramientas", "Herramientas y plataformas", "", D.herramientas) +
+      moneyField("marketing", "Marketing para conseguir a este cliente", "", D.marketing) +
+      moneyField("otros", "Comisiones, ayudas externas, otros", "", D.otros) +
+      '<label>Margen que quieres ganar (%)<input type="number" inputmode="decimal" min="0" step="any" id="margen" value="' + esc(D.margen) + '"></label></div>' +
+      '<div class="calc"><b>Mi costo total</b><span class="big" id="c"></span><b style="margin-top:10px">Mi piso (costo + margen)</b><span class="big" id="p"></span></div>' +
+      navHtml();
+    bind({ horas: "horas", valorHora: "valorHora", herramientas: "herramientas", marketing: "marketing", otros: "otros", margen: "margen" });
+    live = function () { document.getElementById("c").textContent = money(costo()); document.getElementById("p").textContent = money(piso()); }; live();
+  }
+
+  function s4() {
+    card.innerHTML = '<p class="kicker">Paso 4 · Tu precio</p><h2>Ubica tu precio entre el piso y el valor</h2>' +
+      '<p class="lead">Tu precio vive entre dos números: abajo, lo que te cuesta (tu piso). Arriba, lo que vale el resultado para tu cliente. Un precio pegado al piso te vuelve «la barata»; uno pensado desde el valor se defiende solo.</p>' +
+      '<div class="fields">' + moneyField("hoy", "Lo que cobras hoy por este servicio", "", D.hoy) + '</div>' +
+      '<div class="scale" id="scale"></div><div id="msg"></div>' + navHtml();
+    bind({ hoy: "hoy" });
+    live = function () {
+      var p = piso(), v = valor6(), h = num(D.hoy), out = "", msg = "";
+      if (h && (p || v)) {
+        var top = Math.max(v, p, h) * 1.1, pos = Math.min(100, h / top * 100);
+        out = '<div class="bar"><i style="left:' + pos + '%"></i></div><div class="bar-legend"><span>$0</span><span>Tu piso ' + money(p) + '</span><span>Valor ' + money(v) + '</span></div>';
+      }
+      if (h && p && h < p) msg = 'Estás cobrando <b>' + money(p - h) + ' por debajo de tu piso</b>. Así el negocio paga tu servicio con tu propio bolsillo.';
+      else if (h && p && h >= p && v) msg = 'Cobras <b>' + money(h) + '</b>, lo que equivale al <b>' + Math.round(h / v * 100) + '%</b> de lo que le cuesta a tu cliente seguir igual 6 meses. ¿Ese precio lo pusiste por valor?';
+      else if (h && p && h >= p) msg = 'Estás por encima de tu piso. Falta el otro lado: volver al paso 2 y estimar cuánto le cuesta al cliente no resolverlo.';
+      document.getElementById("scale").innerHTML = out;
+      document.getElementById("msg").innerHTML = msg ? '<p class="note">' + msg + '</p>' : "";
+    }; live();
+  }
+
+  function s5() {
+    var html = "";
+    MOTIVOS.forEach(function (m) {
+      html += '<button type="button" class="chk" data-id="' + m.id + '" aria-pressed="' + (D.motivos.indexOf(m.id) > -1) + '"><span class="box"></span><span>' + m.t + '</span></button>';
+    });
+    card.innerHTML = '<p class="kicker">Paso 5 · La prueba del miedo</p><h2>¿Por qué tienes ese precio?</h2>' +
+      '<p class="lead">Marca con honestidad el motivo real detrás del precio que cobras hoy. Puedes marcar más de uno.</p>' +
+      '<div class="checks">' + html + '</div><div id="msg"></div>' + navHtml();
+    var msg = document.getElementById("msg");
+    function upd() {
+      var fuga = D.motivos.some(function (id) { return id !== "valor"; });
+      msg.innerHTML = !D.motivos.length ? "" : fuga ?
+        '<p class="note">Marcaste al menos una de las cuatro primeras: ahí está tu fuga. La última es el punto al que queremos llegar.</p>' :
+        '<p class="note">Tu precio nació del valor. Ahora toca que lo digas sin disculparte.</p>';
+    }
+    card.querySelectorAll(".chk").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var id = b.getAttribute("data-id"), i = D.motivos.indexOf(id);
+        if (i > -1) D.motivos.splice(i, 1); else D.motivos.push(id);
+        b.setAttribute("aria-pressed", i === -1); upd();
+      });
+    });
+    upd(); bind({});
+  }
+
+  function frase() {
+    return "El resultado al que apunta mi servicio es " + (D.resultado.trim() || "____") + ". La inversión es " + (num(D.inversion) ? money(num(D.inversion)) : "$____") + ".";
+  }
+
+  function s6() {
+    if (!D.inversion && num(D.hoy)) D.inversion = String(num(D.hoy));
+    card.innerHTML = '<p class="kicker">Paso 6 · Cómo lo dices</p><h2>Reescribe cómo dices tu precio</h2>' +
+      '<p class="lead">Deja de decir «cobro X por hora». Di el resultado y después la inversión, sin disculparte.</p>' +
+      '<div class="fields">' + moneyField("inversion", "La inversión que quieres decir en voz alta", "Puedes dejar tu precio de hoy o probar uno nuevo.", D.inversion) + '</div>' +
+      '<p class="quote" id="frase"></p>' +
+      '<p class="note">Léela en voz alta. Si te sale una disculpa antes del número, vuelve al paso 2 y reescríbela.</p>' + navHtml("Ver mi resumen");
+    bind({ inversion: "inversion" });
+    live = function () { document.getElementById("frase").textContent = "«" + frase() + "»"; }; live();
+  }
+
+  function resumenTexto() {
+    var l = ["Mi ejercicio de precios · Método Rentable™ (Lorena Laverde)"];
+    if (D.servicio) l.push("Servicio: " + D.servicio);
+    if (D.resultado) l.push("Resultado que busca mi cliente: " + D.resultado);
+    if (valor6()) l.push("Seguir igual 6 meses le cuesta (estimado): " + money(valor6()));
+    l.push("Mi costo total: " + money(costo()) + " | Mi piso: " + money(piso()));
+    if (num(D.hoy)) l.push("Cobro hoy: " + money(num(D.hoy)));
+    l.push("Mi frase: " + frase());
+    return l.join("\n");
+  }
+
+  function done() {
+    var rows = '<li><span>Mi costo total</span><span>' + money(costo()) + '</span></li>' +
+      '<li><span>Mi piso (costo + ' + (num(D.margen) || 0) + '%)</span><span>' + money(piso()) + '</span></li>' +
+      (valor6() ? '<li><span>Seguir igual 6 meses le cuesta</span><span>' + money(valor6()) + '</span></li>' : "") +
+      (num(D.hoy) ? '<li><span>Lo que cobro hoy</span><span>' + money(num(D.hoy)) + '</span></li>' : "");
+    var fuga = D.motivos.filter(function (id) { return id !== "valor"; }).length;
+    var wa = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent("Hola Lorena, hice el ejercicio de precios y quiero que miremos cómo estoy cobrando hoy.");
+    card.innerHTML = '<p class="kicker">Tu resumen</p><h2>Ya miraste donde casi nadie mira</h2>' +
+      '<ul class="summary">' + rows + '</ul>' +
+      (fuga ? '<p class="note">Marcaste ' + fuga + (fuga === 1 ? ' motivo' : ' motivos') + ' de miedo o comparación detrás de tu precio. Ahí es donde se pierde el dinero que no ves.</p>' : "") +
+      '<p class="quote">«' + esc(frase()) + '»</p>' +
+      '<div class="row"><button class="btn" id="copy" type="button">Copiar mi resumen</button><button class="btn ghost" id="print" type="button">Guardar como PDF</button></div>' +
+      '<div class="calc"><b>¿Lo miramos juntas?</b><p>Si viste que cobras por miedo, o no sabes dónde se te va el dinero, escríbeme y vemos cómo estás cobrando hoy.</p>' +
+      '<div class="row" style="margin-top:10px"><a class="btn" href="' + wa + '" target="_blank" rel="noopener">Escribirme por WhatsApp</a></div></div>' +
+      '<p class="fine">Adaptado de los principios de fijación de precios del método Smart Pricing (Digital Journi LLC, en colaboración con Vilma Núñez, Ph.D.), con el enfoque de Método Rentable™. Las cifras de referencia son orientativas; tus resultados dependen de tu negocio.</p>' +
+      '<div class="nav"><button class="btn ghost" id="back" type="button">Volver al paso 6</button><button class="btn ghost" id="again" type="button">Empezar de nuevo</button></div>';
+    document.getElementById("back").addEventListener("click", function () { go(6); });
+    document.getElementById("again").addEventListener("click", function () {
+      D = { servicio: "", resultado: "", perdidaMes: "", horasPerdidas: "", horas: "", valorHora: "", herramientas: "", marketing: "", otros: "", margen: "20", hoy: "", motivos: [], inversion: "" };
+      go(0);
+    });
+    document.getElementById("print").addEventListener("click", function () { window.print(); });
+    var cp = document.getElementById("copy");
+    cp.addEventListener("click", function () {
+      var t = resumenTexto();
+      function ok() { cp.textContent = "Copiado"; setTimeout(function () { cp.textContent = "Copiar mi resumen"; }, 2000); }
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(t).then(ok, function () { window.prompt("Copia tu resumen:", t); });
+      else window.prompt("Copia tu resumen:", t);
+    });
+  }
+
+  render();
+})();
+</script>
+</body>
+</html>
